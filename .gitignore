@@ -32,3 +32,24 @@ data/geocoding/review.csv
 *.bak
 .patch-backups/
 .vscode/
+
+# Local provider data and credentials
+data/geocoding/provider_candidates.csv
+data/verified_station_coordinates.csv
+data/geocoding/manual_review.csv
+data/stations_needing_geocoding.csv
+data/us_stations_needing_geocoding.csv
+data/stations_address_review.csv
+data/stations_address_candidates.csv
+
+# Editor swap and temporary secret files
+*.swp
+*.swo
+.*.swp
+.*.swo
+
+# Editor swap and temporary secret files
+*.swp
+*.swo
+.*.swp
+.*.swo
