@@ -17,7 +17,7 @@ def distance_miles(a, b):
     )
 
 
-def route_candidates(points, stations, corridor=15, limit=150):
+def route_candidates(points, stations, corridor=15, limit=None):
     if len(points) < 2:
         return []
 
@@ -120,7 +120,5 @@ def route_candidates(points, stations, corridor=15, limit=150):
             })
 
     # Preserve existing ordering and candidate limit.
-    return sorted(
-        out,
-        key=lambda x: (x["route_mile"], x["price"])
-    )[:limit]
+    ordered = sorted(out, key=lambda x: (x["route_mile"], x["price"]))
+    return ordered if limit is None else ordered[:limit]

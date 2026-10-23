@@ -32,7 +32,7 @@ class OptimizeView(APIView):
    route,hit=get_route(start,end)
   except ProviderFailure as err:return Response({'error':'provider_failure','detail':str(err)},status=502)
   # For simplicity a bounded candidate pool is read from the DB; corridor filter is geometric.
-  qs=Station.objects.filter(latitude__isnull=False,longitude__isnull=False).values('opis_id','name','city','state','latitude','longitude','price')
+  qs=Station.objects.filter(latitude__isnull=False,longitude__isnull=False).values('opis_id','name','city','state','latitude','longitude','price','precision')
   stations=[{**s,'price':float(s['price'])} for s in qs.iterator()]
   candidates=route_candidates(route['geometry']['coordinates'],stations,args['corridor_miles'])
   # Projected geometry distances may differ from OSRM's reported route distance.
@@ -55,10 +55,12 @@ class OptimizeView(APIView):
         candidates,
         route['distance_miles'],
         vehicle.get('max_range_miles', 500),
+        vehicle.get('mpg', 10),
+        vehicle.get('starting_fuel_gallons'),
     ),
 }, status=422)
   return Response({'route':route,'fuel_plan':plan,'metadata':{
-   'routing_cache_hit':hit,'candidate_stations':len(candidates),'station_coordinate_precision':'city_centroid_approximation',
+   'routing_cache_hit':hit,'candidate_stations':len(candidates),'station_coordinate_precision':'mixed; see candidate_precision_counts','candidate_precision_counts':{p:sum(1 for s in candidates if s.get('precision')==p) for p in sorted({s.get('precision','unknown') for s in candidates})},
    'route_access':'projected proximity only; station detours are not verified',
    'cost_basis':'additional purchases only; existing starting fuel excluded',
    'notes':'Optimal purchases for the modeled fixed route and its approximate stations; not a global road-network optimum.'}})
