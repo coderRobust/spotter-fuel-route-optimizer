@@ -53,3 +53,5 @@ data/stations_address_candidates.csv
 *.swo
 .*.swp
 .*.swo
+*.swp
+*.swo
