@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: fuelroutes
+      POSTGRES_USER: fuelroutes
+      POSTGRES_PASSWORD: dev-only-password
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fuelroutes"]
+      interval: 3s
+      retries: 20
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      DATABASE_URL: postgres://fuelroutes:dev-only-password@db:5432/fuelroutes
+      DJANGO_DEBUG: "1"
+      DJANGO_SECRET_KEY: docker-development-only
+      DJANGO_ALLOWED_HOSTS: localhost,127.0.0.1
+      GEOCODER_USER_AGENT: "fuel-assessment-demo/1.0 (update-with-contact@example.com)"
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  postgres_data:

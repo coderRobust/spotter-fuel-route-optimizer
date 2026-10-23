@@ -1,0 +1,62 @@
+{
+  "info": {
+    "name": "FuelRoute Optimizer",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health/"
+      }
+    },
+    {
+      "name": "Station stats",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/stations/stats/"
+      }
+    },
+    {
+      "name": "Optimize Chicago to Los Angeles",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start\": \"Chicago, IL\",\n  \"finish\": \"Los Angeles, CA\",\n  \"vehicle\": {\n    \"max_range_miles\": 500,\n    \"mpg\": 10,\n    \"starting_fuel_gallons\": 50\n  }\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/routes/optimize/"
+      }
+    },
+    {
+      "name": "Invalid input (expect HTTP 400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        },
+        "url": "{{baseUrl}}/api/v1/routes/optimize/"
+      }
+    }
+  ]
+}

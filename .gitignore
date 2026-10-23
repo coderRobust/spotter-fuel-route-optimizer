@@ -1,0 +1,34 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+db.sqlite3
+.coverage
+htmlcov/
+*.log
+
+# Virtual environment and Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local settings and secrets
+.env
+.env.*
+!.env.example
+
+# Local database
+db.sqlite3
+*.sqlite3
+
+# Temporary geocoding data
+data/geocoding/cache.json
+data/geocoding/review.csv
+
+# Backups and editor files
+*.bak
+.patch-backups/
+.vscode/
