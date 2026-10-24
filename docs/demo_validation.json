@@ -1,0 +1,69 @@
+{
+  "request": {
+    "start": "Chicago, IL",
+    "finish": "Los Angeles, CA",
+    "vehicle": {
+      "max_range_miles": 500,
+      "mpg": 10,
+      "starting_fuel_gallons": 50
+    }
+  },
+  "runs": [
+    {
+      "run": "uncached",
+      "status": 422,
+      "latency_seconds": 4.58,
+      "routing_calls": 1,
+      "geocoding_calls": 0,
+      "response": {
+        "error": "no_feasible_fuel_plan",
+        "detail": "Insufficient fuel to reach next station",
+        "candidate_stations": 24,
+        "route_distance_miles": 2018.04,
+        "diagnostics": {
+          "candidate_stations": 24,
+          "initial_fuel_gallons": 50.0,
+          "initial_range_miles": 500.0,
+          "first_station_mile": 1000.62,
+          "first_target_reachable": false,
+          "largest_gap_miles": 1000.62,
+          "gaps_over_vehicle_range": [
+            {
+              "from_mile": 0.0,
+              "to_mile": 1000.62,
+              "gap_miles": 1000.62
+            }
+          ]
+        }
+      }
+    },
+    {
+      "run": "cached",
+      "status": 422,
+      "latency_seconds": 0.232,
+      "routing_calls": 0,
+      "geocoding_calls": 0,
+      "response": {
+        "error": "no_feasible_fuel_plan",
+        "detail": "Insufficient fuel to reach next station",
+        "candidate_stations": 24,
+        "route_distance_miles": 2018.04,
+        "diagnostics": {
+          "candidate_stations": 24,
+          "initial_fuel_gallons": 50.0,
+          "initial_range_miles": 500.0,
+          "first_station_mile": 1000.62,
+          "first_target_reachable": false,
+          "largest_gap_miles": 1000.62,
+          "gaps_over_vehicle_range": [
+            {
+              "from_mile": 0.0,
+              "to_mile": 1000.62,
+              "gap_miles": 1000.62
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

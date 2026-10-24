@@ -17,7 +17,7 @@ def distance_miles(a, b):
     )
 
 
-def route_candidates(points, stations, corridor=15, limit=None):
+def route_candidates(points, stations, corridor=15, limit=None, segment_miles=None):
     if len(points) < 2:
         return []
 
@@ -27,6 +27,11 @@ def route_candidates(points, stations, corridor=15, limit=None):
         distance_miles(a, b)
         for a, b in zip(xy, xy[1:])
     ]
+
+    if segment_miles is not None:
+        if len(segment_miles) != len(lengths):
+            raise ValueError("Segment distances do not match route geometry")
+        lengths = segment_miles
 
     cumulative = [0.0]
     for length in lengths:
@@ -115,7 +120,7 @@ def route_candidates(points, stations, corridor=15, limit=None):
         if best and best[0] <= corridor:
             out.append({
                 **station,
-                "route_mile": round(best[1], 3),
+                "route_mile": best[1],
                 "offset_miles": round(best[0], 3),
             })
 

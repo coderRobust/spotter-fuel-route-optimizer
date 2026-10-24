@@ -3,7 +3,7 @@ import json
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
-from django.core.management.base import BaseCommand
+from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 from planner.models import Station
 
@@ -29,6 +29,8 @@ class Command(BaseCommand):
         unique = {}
         read = 0
         invalid = 0
+        duplicate_rows = 0
+        conflicting_prices = 0
 
         with open(
             opts["csv"], newline="", encoding="utf-8-sig"
@@ -53,6 +55,10 @@ class Command(BaseCommand):
                         raise ValueError("Invalid station")
 
                     key = (opis, city.casefold(), state)
+
+                    if key in unique:
+                        duplicate_rows += 1
+                        conflicting_prices += price != unique[key]["price"]
 
                     if (
                         key not in unique
@@ -94,6 +100,9 @@ class Command(BaseCommand):
 
         for key, rec in unique.items():
             old = existing.get(key)
+
+            if old is not None and old.precision == "station_verified" and (old.address != rec["address"] or old.name != rec["name"]):
+                raise CommandError("Verified station identity changed; review coordinates before reimport")
 
             # Prefer coordinates already stored in DB.
             if (
@@ -148,6 +157,6 @@ class Command(BaseCommand):
         self.stdout.write(self.style.SUCCESS(
             f"rows={read} "
             f"unique_station_keys={len(objects)} "
-            f"bad_rows={invalid} "
+            f"bad_rows={invalid} duplicate_rows={duplicate_rows} conflicting_prices={conflicting_prices} "
             f"located={located}"
         ))

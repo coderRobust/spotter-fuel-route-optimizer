@@ -10,6 +10,12 @@ class Station(models.Model):
  latitude=models.FloatField(null=True,blank=True)
  longitude=models.FloatField(null=True,blank=True)
  precision=models.CharField(max_length=20,default='unknown')
+ coordinate_provider=models.CharField(max_length=120,blank=True)
+ coordinate_provider_id=models.CharField(max_length=255,blank=True)
+ coordinate_confidence=models.FloatField(null=True,blank=True)
+ coordinate_evidence=models.TextField(blank=True)
+ coordinate_reviewer=models.CharField(max_length=120,blank=True)
+ coordinate_reviewed_at=models.DateTimeField(null=True,blank=True)
  class Meta:
   indexes=[models.Index(fields=['state','city']),models.Index(fields=['latitude','longitude'])]
   constraints=[models.UniqueConstraint(fields=['opis_id','city','state'],name='unique_opis_city_state')]

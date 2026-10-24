@@ -3,6 +3,9 @@ import math
 
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
+from django.utils.dateparse import parse_datetime
+from django.utils import timezone
+from planner.station_matching import US_STATES
 
 from planner.models import Station
 
@@ -20,11 +23,13 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         required = {
             "opis_id", "city", "state", "address",
-            "latitude", "longitude",
+            "latitude", "longitude", "provider", "provider_id", "confidence",
+            "review_status", "evidence", "reviewer", "reviewed_at",
         }
         proposed = []
         rejected = []
         seen = set()
+        assigned = set()
 
         try:
             with open(options["csv"], newline="", encoding="utf-8-sig") as f:
@@ -49,6 +54,31 @@ class Command(BaseCommand):
                         if not (24 <= lat <= 50 and -125 <= lon <= -66):
                             raise ValueError("Outside configured contiguous-US bounds")
 
+                        if state not in US_STATES:
+                            raise ValueError("Not a US station")
+                        if row['review_status'] != 'VERIFIED':
+                            raise ValueError("Independent verification required")
+                        if not all(row[k].strip() for k in ('provider', 'provider_id', 'evidence', 'reviewer')):
+                            raise ValueError("Missing provenance or independent evidence")
+                        confidence = float(row['confidence'])
+                        reviewed_at = parse_datetime(row['reviewed_at'])
+                        if not math.isfinite(confidence) or not 0 <= confidence <= 1:
+                            raise ValueError("Invalid confidence")
+                        if reviewed_at is None or timezone.is_naive(reviewed_at):
+                            raise ValueError("Timezone-aware review timestamp required")
+                        assignment = (row['provider'], row['provider_id'])
+                        coordinate = (lat, lon)
+                        if assignment in assigned or coordinate in assigned:
+                            raise ValueError("Duplicate provider POI or coordinate assignment")
+                        assigned.update((assignment, coordinate))
+                        if Station.objects.filter(latitude=lat, longitude=lon).exclude(
+                            opis_id=opis, city__iexact=city, state=state
+                        ).exists():
+                            raise ValueError("Coordinates assigned to a different station")
+                        if Station.objects.filter(coordinate_provider=row['provider'], coordinate_provider_id=row['provider_id']).exclude(
+                            opis_id=opis, city__iexact=city, state=state
+                        ).exists():
+                            raise ValueError("Provider POI assigned to a different station")
                         key = (opis, city.casefold(), state)
                         if key in seen:
                             raise ValueError("Duplicate station identity")
@@ -70,6 +100,12 @@ class Command(BaseCommand):
                         station.latitude = lat
                         station.longitude = lon
                         station.precision = "station_verified"
+                        station.coordinate_provider = row['provider']
+                        station.coordinate_provider_id = row['provider_id']
+                        station.coordinate_confidence = confidence
+                        station.coordinate_evidence = row['evidence']
+                        station.coordinate_reviewer = row['reviewer']
+                        station.coordinate_reviewed_at = reviewed_at
                         proposed.append(station)
                     except (ValueError, TypeError, AttributeError) as error:
                         rejected.append((line, str(error)))
@@ -91,7 +127,7 @@ class Command(BaseCommand):
         if options["apply"]:
             with transaction.atomic():
                 Station.objects.bulk_update(
-                    proposed, ["latitude", "longitude", "precision"],
+                    proposed, ["latitude", "longitude", "precision", "coordinate_provider", "coordinate_provider_id", "coordinate_confidence", "coordinate_evidence", "coordinate_reviewer", "coordinate_reviewed_at"],
                     batch_size=400
                 )
             self.stdout.write(self.style.SUCCESS(

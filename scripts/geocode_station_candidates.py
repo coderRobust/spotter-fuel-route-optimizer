@@ -92,7 +92,7 @@ def main():
                     response.raise_for_status()
                     results = response.json().get("results", [])
                 except (httpx.HTTPError, ValueError) as error:
-                    print("Provider error; stopping:", error)
+                    print("Provider error; stopping:", type(error).__name__)
                     break
 
                 result = results[0] if results else {}

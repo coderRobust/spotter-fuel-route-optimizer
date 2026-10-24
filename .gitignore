@@ -55,3 +55,9 @@ data/stations_address_candidates.csv
 .*.swo
 *.swp
 *.swo
+
+# Local geographic provider inputs, reports and verification artifacts
+/data/geocoding/
+/data/*review*.csv
+/data/*candidate*.csv
+/data/*poi*.geojson
