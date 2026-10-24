@@ -2,9 +2,9 @@
 
 Django REST Framework API for US driving routes and cost-effective fuel purchases using the supplied assessment CSV. Defaults: **500-mile tank range, 10 MPG, 50 gallons starting fuel**. Returns route GeoJSON, a rendered map link, station identities, purchase quantities, fuel balances and total additional purchase cost.
 
-A real Chicago → Los Angeles request has been demonstrated with **five purchases across 2,018.04 miles for $532.23**. The station preparation is reproducible offline. See [actual request/results and validation](docs/ASSESSMENT_VALIDATION.md).
+A real Chicago → Los Angeles request has been demonstrated with **seven road-access-verified purchases across 2,025.81 miles for $532.88**. The station preparation is reproducible offline. See [actual request/results and validation](docs/ASSESSMENT_VALIDATION.md).
 
-**Model boundary:** purchases minimize cost among the available verified candidates on the chosen fixed route, assuming continuous fuel and zero access-road detours. This is not a global road-network optimum. Twelve independently source-checked station identities are bundled across two western corridors; nationwide station-level coverage is incomplete. Trips without sufficient verified coverage return 422. City centroids are excluded by default.
+**Model boundary:** purchases minimize cost among the available verified candidates on the chosen fixed route; the default also road-routes through selected stations and includes detour fuel. This is not a global road-network optimum. The bundle contains 12 manually source-reviewed locations and 94 exact cross-source station matches; nationwide station-level coverage remains incomplete. Trips without sufficient verified coverage return 422. City centroids are excluded by default.
 
 ## Run locally
 
@@ -19,6 +19,7 @@ python -m pip install -r requirements.txt
 python manage.py migrate --noinput
 python manage.py import_stations
 python manage.py prepare_corridor_coordinates --apply
+python manage.py prepare_nationwide_coordinates --apply
 python manage.py runserver
 ```
 
@@ -55,21 +56,21 @@ Errors: **400** invalid input/location, **422** no driving route or insufficient
 
 Capacity is range / MPG. Starting fuel defaults to a full 50-gallon tank and is **excluded from additional purchase cost**. To model paying for all fuel during this trip, use zero starting fuel only when a verified station is available at the origin. The response separately reports purchased, consumed and arrival fuel; no historical starting-fuel price is fabricated.
 
-At each station, buy enough to reach the first strictly cheaper reachable station (or destination); otherwise fill to capacity or the remaining trip requirement. Equal-position candidates retain the lowest price. This greedy rule minimizes additional purchase cost in the stated fixed-route model; tests compare it with an independent exhaustive dynamic-programming oracle. Calculations use Decimal internally and round only at presentation; sums of individually rounded stop costs can differ slightly from the total.
+At each station, buy enough to reach the first strictly cheaper reachable station (or destination); otherwise fill to capacity or the remaining trip requirement. Equal-position candidates retain the lowest price. This greedy rule minimizes additional purchase cost in the stated fixed-route model; tests compare it with an independent exhaustive dynamic-programming oracle. By default, a second routing request routes through selected stations, checks road snaps within 75 meters, and recalculates fuel using actual routed legs. This validates access for the selected plan, but does not search every possible combination of alternate stations. Set `verify_road_access` to `false` only to use projected stops and a single routing request. Calculations use Decimal internally and round only at presentation; sums of individually rounded stop costs can differ slightly from the total.
 
-Stations project onto the closest route segment. Per-segment OSRM distance annotations avoid global geometry scaling when available; fallback scaling is disclosed in metadata. Proximity does not prove legal road access or account for ramps/detour fuel. Route loops can make nearest-segment projection ambiguous. These are navigation limitations, not claims of verified road-access routing.
+Stations project onto the closest route segment to generate the initial candidate plan. Per-segment OSRM distance annotations avoid global geometry scaling when available; fallback scaling is disclosed in metadata. The default access-check route includes ramps/service-road detours in fuel consumption. Route loops can make nearest-segment projection ambiguous, and the final result is not a global road-network optimum.
 
 ## Source data and station preparation
 
 The supplied CSV contains 8,151 observations and 6,738 OPIS/city/state identities. Import rejects invalid prices and reports duplicates/conflicts. Without timestamps, the existing rule keeps the **minimum recorded price** per identity: an optimistic historical-price assumption, not a current quote. The original CSV preserves provenance.
 
-The bundled [reviewed OSM subset](data/verified_corridor/README.md) provides **12 station-specific locations**. Store/OPIS/city/state/exit identities were independently checked against official operator listings. Coordinates come from actual fuel nodes or reviewed canopy footprints, not city centers. OSM contributor attribution, ODbL license, feature versions and review sources are included. `prepare_corridor_coordinates` regenerates the ignored verification CSV and invokes the same transactional importer available for any reviewed station.
+The bundled [reviewed OSM subset](data/verified_corridor/README.md) provides **12 station-specific locations**. Store/OPIS/city/state/exit identities were independently checked against official operator listings. Coordinates come from actual fuel nodes or reviewed canopy footprints, not city centers. The [nationwide match data](data/nationwide/README.md) adds **94 exact operator/store/CSV/OSM identity matches**; these are cross-source checked, not claimed as field visits. Attribution and matching evidence are included. The two preparation commands regenerate their ignored CSVs and invoke the same transactional coordinate importer.
 
 [Generic offline matching](docs/STATION_VERIFICATION.md) creates review candidates only; it never automatically verifies a result. Verified imports require attribution, provider identity, reviewer, review timestamp and evidence; duplicate assignments and conflicting verified coordinates are rejected. A clone can reproduce the reviewed subset without geocoding keys or live station queries.
 
 ## Performance and verification
 
-Each optimization uses one OSRM request when uncached, zero when cached, plus up to two geocoding calls for uncached text endpoints. Preset/cached endpoints avoid geocoding. An indexed bounding box filters stations before projection; candidates are never truncated by an early route-position limit. File-based cache shares routes/maps across local Gunicorn workers. Configure `CACHE_LOCATION` on a private writable shared filesystem for local workers; a multi-host deployment needs an appropriate shared cache backend.
+Each optimization uses one OSRM request for the base route and, by default, one more to route through selected stations. Both are cached; projected-only mode uses the base route alone. Uncached text endpoints may add up to two geocoding calls; preset/cached endpoints avoid geocoding. An indexed bounding box filters stations before projection; candidates are never truncated by an early route-position limit. File-based cache shares routes/maps across local Gunicorn workers. Configure `CACHE_LOCATION` on a private writable shared filesystem for local workers; a multi-host deployment needs an appropriate shared cache backend.
 
 ```sh
 python manage.py check
@@ -90,6 +91,7 @@ docker compose up -d db
 docker compose run --rm api python manage.py migrate --noinput
 docker compose run --rm api python manage.py import_stations
 docker compose run --rm api python manage.py prepare_corridor_coordinates --apply
+docker compose run --rm api python manage.py prepare_nationwide_coordinates --apply
 docker compose up -d api
 ```
 

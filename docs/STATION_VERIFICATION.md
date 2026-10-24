@@ -1,6 +1,6 @@
 # Reproducible station verification
 
-A reviewed twelve-station demonstration dataset is now bundled: see [source evidence and ODbL attribution](../data/verified_corridor/README.md). After importing prices, run `python manage.py prepare_corridor_coordinates --apply` to reproduce it offline. The generic workflow below remains available for further enrichment. City centroids and historical labels without evidence do not establish station-level accuracy.
+Two offline station datasets are bundled: a twelve-station reviewed corridor ([source evidence and ODbL attribution](../data/verified_corridor/README.md)) and 94 exact cross-source CSV/operator/OSM matches ([matching rules and attribution](../data/nationwide/README.md)). After importing prices, run `python manage.py prepare_corridor_coordinates --apply` and `python manage.py prepare_nationwide_coordinates --apply` to reproduce them offline. The generic workflow below remains available for further enrichment. Automated cross-source matches are not field visits; city centroids and historical labels without evidence do not establish station-level accuracy.
 
 1. Create the environment, install requirements, migrate, and run `python manage.py import_stations`.
 2. Obtain an authorized local OpenStreetMap fuel POI export for the demonstration corridor (IL, MO, OK, TX, NM, AZ, CA). Preserve the source URL, download date, dataset version/hash and OpenStreetMap contributor attribution. Respect ODbL and the supplier's usage limits. This command makes no external calls and does not bulk-query Nominatim.

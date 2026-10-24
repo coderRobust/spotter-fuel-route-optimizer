@@ -36,14 +36,18 @@ def locate(place,coords=None):
  except httpx.HTTPError as error:raise ProviderFailure('Geocoder unavailable') from error
  except (ValueError, KeyError, TypeError, IndexError) as error:raise ProviderFailure('Malformed geocoder response') from error
 
-def get_route(start,end):
- key='route:v2:'+hashlib.sha256(json.dumps([start,end]).encode()).hexdigest()
+def get_route(start,end,via=None):
+ key='route:v3:'+hashlib.sha256(json.dumps([settings.ROUTING_BASE_URL,start,end,via]).encode()).hexdigest()
  saved=cache.get(key)
  if saved:return saved,True
- url=settings.ROUTING_BASE_URL.rstrip('/')+'/route/v1/driving/'+f'{start[1]},{start[0]};{end[1]},{end[0]}'
+ points=[start,*(via or []),end]
+ url=settings.ROUTING_BASE_URL.rstrip('/')+'/route/v1/driving/'+';'.join(f'{p[1]},{p[0]}' for p in points)
+ params={'overview':'full','geometries':'geojson','steps':'false','annotations':'distance'}
+ if via:
+  params.update(radiuses=';'.join(['75']*len(points)),snapping='any',continue_straight='false')
  try:
   with httpx.Client(timeout=18) as client:
-   response=client.get(url,params={'overview':'full','geometries':'geojson','steps':'false','annotations':'distance'})
+   response=client.get(url,params=params)
    body=response.json()
    if response.status_code in (200,400) and body.get('code') in ('NoRoute','NoSegment'):
     raise NoDrivingRoute('No drivable route found between these endpoints')
@@ -62,6 +66,13 @@ def get_route(start,end):
   segments=[d / 1000 * MILES_PER_KM for leg in route.get('legs', []) for d in leg.get('annotation', {}).get('distance', [])]
   if len(segments)==len(points)-1 and all(math.isfinite(d) and d>=0 for d in segments) and abs(sum(segments)-result['distance_miles'])<.01:
    result['segment_miles']=segments
+  if via:
+   legs=[leg['distance']/1000*MILES_PER_KM for leg in route['legs']]
+   snaps=[waypoint['distance'] for waypoint in body['waypoints']]
+   if len(legs)!=len(via)+1 or len(snaps)!=len(via)+2 or any(not math.isfinite(d) or d<0 for d in legs+snaps) or max(snaps)>75 or abs(sum(legs)-result['distance_miles'])>.001:
+    raise ProviderFailure('Invalid station-access route distances or snaps')
+   result['leg_distances_miles']=legs
+   result['waypoint_snap_distances_meters']=snaps
   cache.set(key,result,settings.ROUTE_CACHE_SECONDS)
   return result,False
  except httpx.HTTPError as error:raise ProviderFailure('Routing provider unavailable') from error

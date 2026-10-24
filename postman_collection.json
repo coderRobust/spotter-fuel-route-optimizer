@@ -36,7 +36,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"start\": \"Chicago, IL\",\n  \"finish\": \"Los Angeles, CA\",\n  \"vehicle\": {\n    \"max_range_miles\": 500,\n    \"mpg\": 10,\n    \"starting_fuel_gallons\": 50\n  }\n}"
+          "raw": "{\n  \"start\": \"Chicago, IL\",\n  \"finish\": \"Los Angeles, CA\",\n  \"verify_road_access\": true,\n  \"vehicle\": {\n    \"max_range_miles\": 500,\n    \"mpg\": 10,\n    \"starting_fuel_gallons\": 50\n  }\n}"
         },
         "url": "{{baseUrl}}/api/v1/routes/optimize/"
       },
@@ -51,6 +51,10 @@
               "  const body = pm.response.json();",
               "  pm.test(\"Multiple real fuel purchases\", () => pm.expect(body.fuel_plan.stops.length).to.be.at.least(2));",
               "  pm.test(\"Verified coordinates only\", () => pm.expect(body.metadata.approximate_stations_allowed).to.eql(false));",
+              "  pm.test(\"Station access verified\", () => pm.expect(body.metadata.road_access_verified).to.eql(true));",
+              "  pm.test(\"All selected stops are road-accessible\", () => pm.expect(body.fuel_plan.stops.every(stop => stop.road_access_verified)).to.eql(true));",
+              "  pm.test(\"All routed legs are within range\", () => pm.expect(body.route.leg_distances_miles.every(miles => miles <= 500)).to.eql(true));",
+              "  pm.test(\"At most two routing requests\", () => pm.expect(body.metadata.routing_requests).to.be.at.most(2));",
               "  pm.test(\"Fuel balance\", () => pm.expect(Math.abs(50 + body.fuel_plan.total_gallons_purchased - body.fuel_plan.total_gallons_consumed - body.fuel_plan.final_fuel_gallons)).to.be.below(0.005));",
               "  pm.collectionVariables.set(\"mapPath\", body.map_url);",
               "}"

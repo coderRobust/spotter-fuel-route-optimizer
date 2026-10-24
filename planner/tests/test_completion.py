@@ -92,7 +92,7 @@ class LongRouteApiTests(TestCase):
         for n, lon in enumerate([-95, -100, -105]):
             Station.objects.create(opis_id=str(n), name='Synthetic test fixture', precision='station_verified', coordinate_evidence='Synthetic verified fixture', city='Test', state='NM', price=3,
                                    latitude=35, longitude=lon)
-        payload = {'start_coordinates': {'lat': 35, 'lon': -90}, 'finish_coordinates': {'lat': 35, 'lon': -110}}
+        payload = {'verify_road_access': False, 'start_coordinates': {'lat': 35, 'lon': -90}, 'finish_coordinates': {'lat': 35, 'lon': -110}}
         response = APIClient().post('/api/v1/routes/optimize/', payload, format='json')
         self.assertEqual(response.status_code, 200, response.data)
         self.assertGreaterEqual(len(response.data['fuel_plan']['stops']), 3)
@@ -104,7 +104,7 @@ class LongRouteApiTests(TestCase):
     def test_non_us_station_excluded(self, route_mock):
         route_mock.return_value = ({'distance_miles': 700, 'geometry': {'coordinates': [[-100, 35], [-110, 35]]}}, False)
         Station.objects.create(opis_id='ca', name='Non-US', city='Test', state='ON', price=3, latitude=35, longitude=-105)
-        response = APIClient().post('/api/v1/routes/optimize/', {'start': 'Chicago, IL', 'finish': 'Los Angeles, CA'}, format='json')
+        response = APIClient().post('/api/v1/routes/optimize/', {'verify_road_access': False, 'start': 'Chicago, IL', 'finish': 'Los Angeles, CA'}, format='json')
         self.assertEqual(response.status_code, 422)
         self.assertEqual(response.data['candidate_stations'], 0)
 
@@ -172,7 +172,7 @@ class FinalAcceptanceTests(TestCase):
         route_mock.return_value = ({'distance_miles': 700, 'geometry': {'type': 'LineString', 'coordinates': [[-100, 35], [-105, 35], [-110, 35]]}}, False)
         station = Station.objects.create(opis_id='s', name='</script><script>alert(1)</script>', city='Test', state='NM',
                                          price=3, latitude=35, longitude=-105, precision='city_centroid')
-        payload = {'start': 'Chicago, IL', 'finish': 'Los Angeles, CA'}
+        payload = {'verify_road_access': False, 'start': 'Chicago, IL', 'finish': 'Los Angeles, CA'}
         client = APIClient()
         self.assertEqual(client.post('/api/v1/routes/optimize/', payload, format='json').status_code, 422)
         station.precision = 'station_verified'
@@ -190,9 +190,9 @@ class FinalAcceptanceTests(TestCase):
     def test_nonfinite_vehicle_and_coordinates_rejected(self):
         from planner.serializers import OptimizeSerializer
         for value in ('NaN', 'Infinity', '-Infinity'):
-            serializer = OptimizeSerializer(data={'start': 'Chicago, IL', 'finish': 'Los Angeles, CA', 'vehicle': {'mpg': value}})
+            serializer = OptimizeSerializer(data={'verify_road_access': False, 'start': 'Chicago, IL', 'finish': 'Los Angeles, CA', 'vehicle': {'mpg': value}})
             self.assertFalse(serializer.is_valid())
-            serializer = OptimizeSerializer(data={'start_coordinates': {'lat': value, 'lon': -100}, 'finish': 'Los Angeles, CA'})
+            serializer = OptimizeSerializer(data={'verify_road_access': False, 'start_coordinates': {'lat': value, 'lon': -100}, 'finish': 'Los Angeles, CA'})
             self.assertFalse(serializer.is_valid())
 
     @patch('planner.services.httpx.Client')
@@ -229,7 +229,7 @@ class FinalAcceptanceTests(TestCase):
 
     def test_alaska_hawaii_endpoints_validate(self):
         from planner.serializers import OptimizeSerializer
-        serializer = OptimizeSerializer(data={'start_coordinates': {'lat': 61.2, 'lon': -149.9},
+        serializer = OptimizeSerializer(data={'verify_road_access': False, 'start_coordinates': {'lat': 61.2, 'lon': -149.9},
                                                'finish_coordinates': {'lat': 21.3, 'lon': -157.8}})
         self.assertTrue(serializer.is_valid(), serializer.errors)
 

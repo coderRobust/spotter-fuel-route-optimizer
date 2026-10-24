@@ -29,6 +29,7 @@ class OptimizeSerializer(serializers.Serializer):
     finish_coordinates = CoordinatesSerializer(required=False)
     vehicle = VehicleSerializer(required=False)
     corridor_miles = FiniteFloatField(default=15, min_value=1, max_value=50)
+    verify_road_access = serializers.BooleanField(default=True)
     allow_approximate_stations = serializers.BooleanField(default=False)
 
     def validate(self, attrs):

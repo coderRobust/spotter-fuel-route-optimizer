@@ -14,4 +14,5 @@ jobs:
       - run: python manage.py makemigrations --check --dry-run
       - run: python manage.py import_stations
       - run: python manage.py prepare_corridor_coordinates --apply
+      - run: python manage.py prepare_nationwide_coordinates --apply
       - run: pytest -q

@@ -1,277 +1,128 @@
 {
+  "captured_at": "2026-10-25T02:22:05+05:30",
   "request": {
-    "start": "Chicago, IL",
-    "finish": "Los Angeles, CA",
-    "vehicle": {
-      "max_range_miles": 500,
-      "mpg": 10,
-      "starting_fuel_gallons": 50
+    "method": "POST",
+    "path": "/api/v1/routes/optimize/",
+    "body": {
+      "start": "Chicago, IL",
+      "finish": "Los Angeles, CA",
+      "vehicle": {
+        "max_range_miles": 500,
+        "mpg": 10,
+        "starting_fuel_gallons": 50
+      }
     }
   },
-  "runs": [
-    {
-      "run": "uncached",
-      "status": 200,
-      "latency_seconds": 4.986,
-      "response_bytes": 529532,
-      "routing_calls": 1,
-      "geocoding_calls": 0,
-      "fuel_audit": "passed: station identity, source price, stop order, range, tank capacity, fuel balance and cost",
-      "response": {
-        "map_url": "/maps/7eHHud_uCaeMr18hAcR7bESraUKQDafD/",
-        "route": {
-          "distance_miles": 2018.0352980838961,
-          "duration_minutes": 2121.4,
-          "geometry": {
-            "omitted_from_report": true
-          }
-        },
-        "fuel_plan": {
-          "stops": [
-            {
-              "opis_id": "67066",
-              "name": "LOVES TRAVEL STOP #361",
-              "city": "Newton",
-              "state": "IA",
-              "latitude": 41.6804245,
-              "longitude": -92.9975724,
-              "mile_marker": 296.71,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "node/947850836",
-              "arrival_fuel_gallons": 20.329,
-              "departure_fuel_gallons": 29.092,
-              "offset_miles": 0.148,
-              "price_per_gallon_usd": 3.76233,
-              "gallons": 8.763,
-              "cost_usd": 32.97
-            },
-            {
-              "opis_id": "66236",
-              "name": "LOVES TRAVEL STOP #309",
-              "city": "Aurora",
-              "state": "NE",
-              "latitude": 40.81941033956757,
-              "longitude": -97.9983575245021,
-              "mile_marker": 587.63,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "way/225056801",
-              "arrival_fuel_gallons": 0.0,
-              "departure_fuel_gallons": 50.0,
-              "offset_miles": 0.191,
-              "price_per_gallon_usd": 3.289,
-              "gallons": 50.0,
-              "cost_usd": 164.45
-            },
-            {
-              "opis_id": "67067",
-              "name": "LOVES TRAVEL STOP #377",
-              "city": "Hudson",
-              "state": "CO",
-              "latitude": 40.0778674,
-              "longitude": -104.648352,
-              "mile_marker": 972.2,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "node/4182375319",
-              "arrival_fuel_gallons": 11.543,
-              "departure_fuel_gallons": 50.0,
-              "offset_miles": 0.214,
-              "price_per_gallon_usd": 3.459,
-              "gallons": 38.457,
-              "cost_usd": 133.02
-            },
-            {
-              "opis_id": "69291",
-              "name": "LOVES TRAVEL STOP #581",
-              "city": "Salina",
-              "state": "UT",
-              "latitude": 38.93196918569449,
-              "longitude": -111.8538970036783,
-              "mile_marker": 1448.97,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "way/494917451",
-              "arrival_fuel_gallons": 2.323,
-              "departure_fuel_gallons": 27.818,
-              "offset_miles": 0.135,
-              "price_per_gallon_usd": 3.70567,
-              "gallons": 25.495,
-              "cost_usd": 94.48
-            },
-            {
-              "opis_id": "67296",
-              "name": "LOVES TRAVEL STOP #340",
-              "city": "Las Vegas",
-              "state": "NV",
-              "latitude": 36.38110647117433,
-              "longitude": -114.89647677106598,
-              "mile_marker": 1727.15,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "way/225364820",
-              "arrival_fuel_gallons": 0.0,
-              "departure_fuel_gallons": 29.089,
-              "offset_miles": 0.237,
-              "price_per_gallon_usd": 3.689,
-              "gallons": 29.089,
-              "cost_usd": 107.31
-            }
-          ],
-          "total_gallons_purchased": 151.804,
-          "total_gallons_consumed": 201.804,
-          "total_cost_usd": 532.23,
-          "final_fuel_gallons": 0.0
-        },
-        "metadata": {
-          "routing_cache_hit": false,
-          "candidate_stations": 6,
-          "station_coordinate_precision": "verified only",
-          "candidate_precision_counts": {
-            "station_verified": 6
-          },
-          "approximate_stations_allowed": false,
-          "station_distance_basis": "routing segment annotations",
-          "route_access": "projected proximity only; station detours are not verified",
-          "price_source": "data/fuel-prices-for-be-assessment.csv; minimum recorded price per OPIS/city/state; historical, no freshness guarantee",
-          "coordinate_attribution": "OpenStreetMap contributors, ODbL 1.0 (bundled reviewed dataset); see stop provider fields",
-          "cost_basis": "additional purchases only; existing starting fuel excluded",
-          "notes": "Optimal purchases for the modeled fixed route and its approximate stations; not a global road-network optimum."
-        }
+  "cold_run": {
+    "status": 200,
+    "latency_seconds": 5.243,
+    "response_bytes": 540567,
+    "routing_calls": 2,
+    "geocoding_calls": 0,
+    "road_access_verified": true,
+    "candidate_stations": 9,
+    "route_distance_miles": 2025.8136848024712,
+    "route_duration_minutes": 2155.1,
+    "route_leg_distances_miles": [
+      79.94021163334959,
+      218.9647458004032,
+      291.9972981665272,
+      154.2325319541344,
+      232.7626038043592,
+      477.50822677220003,
+      127.3390275303016,
+      443.0690391411961
+    ],
+    "maximum_waypoint_snap_meters": 19.54038325,
+    "fuel_stops": [
+      {
+        "opis_id": "70406",
+        "name": "LOVES TRAVEL STOP #754",
+        "city": "Rochelle",
+        "state": "IL",
+        "mile_marker": 79.94,
+        "gallons": 7.994,
+        "price_per_gallon_usd": 3.749,
+        "cost_usd": 29.97
+      },
+      {
+        "opis_id": "67066",
+        "name": "LOVES TRAVEL STOP #361",
+        "city": "Newton",
+        "state": "IA",
+        "mile_marker": 298.9,
+        "gallons": 1.096,
+        "price_per_gallon_usd": 3.76233,
+        "cost_usd": 4.12
+      },
+      {
+        "opis_id": "66236",
+        "name": "LOVES TRAVEL STOP #309",
+        "city": "Aurora",
+        "state": "NE",
+        "mile_marker": 590.9,
+        "gallons": 50.0,
+        "price_per_gallon_usd": 3.289,
+        "cost_usd": 164.45
+      },
+      {
+        "opis_id": "67284",
+        "name": "LOVES TRAVEL STOP #390",
+        "city": "North Platte",
+        "state": "NE",
+        "mile_marker": 745.13,
+        "gallons": 15.423,
+        "price_per_gallon_usd": 3.45567,
+        "cost_usd": 53.3
+      },
+      {
+        "opis_id": "67067",
+        "name": "LOVES TRAVEL STOP #377",
+        "city": "Hudson",
+        "state": "CO",
+        "mile_marker": 977.9,
+        "gallons": 23.276,
+        "price_per_gallon_usd": 3.459,
+        "cost_usd": 80.51
+      },
+      {
+        "opis_id": "69291",
+        "name": "LOVES TRAVEL STOP #581",
+        "city": "Salina",
+        "state": "UT",
+        "mile_marker": 1455.41,
+        "gallons": 10.485,
+        "price_per_gallon_usd": 3.70567,
+        "cost_usd": 38.85
+      },
+      {
+        "opis_id": "66912",
+        "name": "LOVES TRAVEL STOPS #335",
+        "city": "Cedar City",
+        "state": "UT",
+        "mile_marker": 1582.74,
+        "gallons": 44.307,
+        "price_per_gallon_usd": 3.649,
+        "cost_usd": 161.68
       }
-    },
-    {
-      "run": "cached",
-      "status": 200,
-      "latency_seconds": 0.213,
-      "response_bytes": 529531,
-      "routing_calls": 0,
-      "geocoding_calls": 0,
-      "fuel_audit": "passed: station identity, source price, stop order, range, tank capacity, fuel balance and cost",
-      "response": {
-        "map_url": "/maps/_GGW-tYrnCEc5ILLyvamv0JLSqiO5A88/",
-        "route": {
-          "distance_miles": 2018.0352980838961,
-          "duration_minutes": 2121.4,
-          "geometry": {
-            "omitted_from_report": true
-          }
-        },
-        "fuel_plan": {
-          "stops": [
-            {
-              "opis_id": "67066",
-              "name": "LOVES TRAVEL STOP #361",
-              "city": "Newton",
-              "state": "IA",
-              "latitude": 41.6804245,
-              "longitude": -92.9975724,
-              "mile_marker": 296.71,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "node/947850836",
-              "arrival_fuel_gallons": 20.329,
-              "departure_fuel_gallons": 29.092,
-              "offset_miles": 0.148,
-              "price_per_gallon_usd": 3.76233,
-              "gallons": 8.763,
-              "cost_usd": 32.97
-            },
-            {
-              "opis_id": "66236",
-              "name": "LOVES TRAVEL STOP #309",
-              "city": "Aurora",
-              "state": "NE",
-              "latitude": 40.81941033956757,
-              "longitude": -97.9983575245021,
-              "mile_marker": 587.63,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "way/225056801",
-              "arrival_fuel_gallons": 0.0,
-              "departure_fuel_gallons": 50.0,
-              "offset_miles": 0.191,
-              "price_per_gallon_usd": 3.289,
-              "gallons": 50.0,
-              "cost_usd": 164.45
-            },
-            {
-              "opis_id": "67067",
-              "name": "LOVES TRAVEL STOP #377",
-              "city": "Hudson",
-              "state": "CO",
-              "latitude": 40.0778674,
-              "longitude": -104.648352,
-              "mile_marker": 972.2,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "node/4182375319",
-              "arrival_fuel_gallons": 11.543,
-              "departure_fuel_gallons": 50.0,
-              "offset_miles": 0.214,
-              "price_per_gallon_usd": 3.459,
-              "gallons": 38.457,
-              "cost_usd": 133.02
-            },
-            {
-              "opis_id": "69291",
-              "name": "LOVES TRAVEL STOP #581",
-              "city": "Salina",
-              "state": "UT",
-              "latitude": 38.93196918569449,
-              "longitude": -111.8538970036783,
-              "mile_marker": 1448.97,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "way/494917451",
-              "arrival_fuel_gallons": 2.323,
-              "departure_fuel_gallons": 27.818,
-              "offset_miles": 0.135,
-              "price_per_gallon_usd": 3.70567,
-              "gallons": 25.495,
-              "cost_usd": 94.48
-            },
-            {
-              "opis_id": "67296",
-              "name": "LOVES TRAVEL STOP #340",
-              "city": "Las Vegas",
-              "state": "NV",
-              "latitude": 36.38110647117433,
-              "longitude": -114.89647677106598,
-              "mile_marker": 1727.15,
-              "coordinate_precision": "station_verified",
-              "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
-              "coordinate_provider_id": "way/225364820",
-              "arrival_fuel_gallons": 0.0,
-              "departure_fuel_gallons": 29.089,
-              "offset_miles": 0.237,
-              "price_per_gallon_usd": 3.689,
-              "gallons": 29.089,
-              "cost_usd": 107.31
-            }
-          ],
-          "total_gallons_purchased": 151.804,
-          "total_gallons_consumed": 201.804,
-          "total_cost_usd": 532.23,
-          "final_fuel_gallons": 0.0
-        },
-        "metadata": {
-          "routing_cache_hit": true,
-          "candidate_stations": 6,
-          "station_coordinate_precision": "verified only",
-          "candidate_precision_counts": {
-            "station_verified": 6
-          },
-          "approximate_stations_allowed": false,
-          "station_distance_basis": "routing segment annotations",
-          "route_access": "projected proximity only; station detours are not verified",
-          "price_source": "data/fuel-prices-for-be-assessment.csv; minimum recorded price per OPIS/city/state; historical, no freshness guarantee",
-          "coordinate_attribution": "OpenStreetMap contributors, ODbL 1.0 (bundled reviewed dataset); see stop provider fields",
-          "cost_basis": "additional purchases only; existing starting fuel excluded",
-          "notes": "Optimal purchases for the modeled fixed route and its approximate stations; not a global road-network optimum."
-        }
-      }
-    }
+    ],
+    "total_gallons_purchased": 152.581,
+    "total_gallons_consumed": 202.581,
+    "final_fuel_gallons": 0.0,
+    "total_cost_usd": 532.88,
+    "fuel_audit": "passed: station identity, CSV price, stop order, road-routed leg range, tank capacity, fuel balance, and cost"
+  },
+  "warm_run": {
+    "status": 200,
+    "latency_seconds": 0.439,
+    "routing_calls": 0,
+    "geocoding_calls": 0,
+    "road_access_verified": true
+  },
+  "limitations": [
+    "The initial plan selects stations on the base route; the access reroute does not exhaustively search all alternate station combinations.",
+    "Fuel prices are historical observations from the supplied CSV, not current pump quotes.",
+    "Starting fuel is excluded from additional purchase cost.",
+    "The route provider may change its route or become unavailable; public service latency is not an SLA."
   ]
 }

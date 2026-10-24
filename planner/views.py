@@ -69,14 +69,26 @@ class OptimizeView(APIView):
         vehicle.get('starting_fuel_gallons'),
     ),
 }, status=422)
+  routing_requests=int(not hit)
+  road_access_verified=False
+  if args['verify_road_access'] and plan['stops']:
+   from .access import verify_access_plan
+   try:
+    route,plan,access_hit=verify_access_plan(start,end,candidates,plan,vehicle)
+    routing_requests+=int(not access_hit)
+    hit=hit and access_hit
+    road_access_verified=True
+   except NoDrivingRoute as err:return Response({'error':'station_access_unavailable','detail':str(err)},status=422)
+   except UnreachableRoute as err:return Response({'error':'no_feasible_access_fuel_plan','detail':str(err)},status=422)
+   except ProviderFailure as err:return Response({'error':'provider_failure','detail':str(err)},status=502)
   from .maps import cache_map
   map_url=cache_map(route,plan)
   return Response({'map_url':map_url,'route':{k:v for k,v in route.items() if k != 'segment_miles'},'fuel_plan':plan,'metadata':{
-   'routing_cache_hit':hit,'candidate_stations':len(candidates),'station_coordinate_precision':'verified only' if not args['allow_approximate_stations'] else 'mixed; see candidate_precision_counts','candidate_precision_counts':{p:sum(1 for s in candidates if s.get('precision')==p) for p in sorted({s.get('precision','unknown') for s in candidates})},
+   'routing_cache_hit':hit,'routing_requests':routing_requests,'road_access_verified':road_access_verified,'candidate_stations':len(candidates),'station_coordinate_precision':'verified only' if not args['allow_approximate_stations'] else 'mixed; see candidate_precision_counts','candidate_precision_counts':{p:sum(1 for s in candidates if s.get('precision')==p) for p in sorted({s.get('precision','unknown') for s in candidates})},
    'approximate_stations_allowed':args['allow_approximate_stations'],
-   'station_distance_basis':'routing segment annotations' if route.get('segment_miles') else 'globally scaled geometry approximation',
-   'route_access':'projected proximity only; station detours are not verified',
+   'station_distance_basis':'actual road-route leg distances' if road_access_verified else ('routing segment annotations' if route.get('segment_miles') else 'globally scaled geometry approximation'),
+   'route_access':'Road-routed via selected stations; detour consumption included; road snap within 75 meters' if road_access_verified else 'Projected proximity only; station detours are not verified',
    'price_source':'data/fuel-prices-for-be-assessment.csv; minimum recorded price per OPIS/city/state; historical, no freshness guarantee',
    'coordinate_attribution':'OpenStreetMap contributors, ODbL 1.0 (bundled reviewed dataset); see stop provider fields',
    'cost_basis':'additional purchases only; existing starting fuel excluded',
-   'notes':'Optimal purchases for the modeled fixed route and its approximate stations; not a global road-network optimum.'}})
+   'notes':'Minimum additional purchase cost on the returned fixed route at the available fuel stops. Initial stop selection uses the base route; alternative stop combinations after road-access rerouting are not exhaustively searched.'}})

@@ -75,12 +75,18 @@ def main():
         response_bytes = len(response.content)
         if response.status_code == 200:
             audit = audit_plan(body)
+            if not body['metadata'].get('road_access_verified'):
+                raise AssertionError('Selected station road access was not verified')
+            if body['metadata'].get('routing_requests', 0) > 2 or calls.count('routing') > 2:
+                raise AssertionError('The request exceeded the two-call routing budget')
             body['route']['geometry'] = {'omitted_from_report': True}
         else:
             audit = 'not applicable: unsuccessful response'
         results.append({'run': label, 'status': response.status_code, 'latency_seconds': round(elapsed, 3),
                         'response_bytes': response_bytes, 'routing_calls': calls.count('routing'),
-                        'geocoding_calls': calls.count('geocoding'), 'fuel_audit': audit, 'response': body})
+                        'geocoding_calls': calls.count('geocoding'),
+                        'road_access_verified': body.get('metadata', {}).get('road_access_verified', False),
+                        'fuel_audit': audit, 'response': body})
     print(json.dumps({'request': payload, 'runs': results}, indent=2))
     if args.require_success and any(r['status'] != 200 for r in results):
         raise SystemExit(1)

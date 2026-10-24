@@ -1,0 +1,4161 @@
+{
+  "attribution": "Powered by Geoapify; OpenStreetMap contributors, ODbL 1.0",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "operator_url": "https://edge.sitecorecloud.io/lovestravela9dd-loves2161-lovesprod042a-cf5a/media/images/bililng-station-codes/station-code-master-list-10926-excel.xlsx",
+  "operator_sha256": "b2eb4db09663dd1cd867315bd70a6569c09a3110e31d701ccc75427624e474c2",
+  "validated_at": "2026-10-25T02:00:00+05:30",
+  "matches": [
+    {
+      "station": {
+        "opis_id": "10030",
+        "name": "LOVES TRAVEL STOP #715",
+        "address": "I-77 EXIT 58 & SR-666 & US-52",
+        "city": "Bastian",
+        "state": "VA"
+      },
+      "operator_reference": {
+        "A": "715",
+        "B": "Bastian",
+        "C": "VA",
+        "D": "10030"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.1397963783054,
+            37.1791355895447
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "VA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 842802842,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/715",
+              "hgv": "yes",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "135",
+        "name": "LOVES TRAVEL STOP #766",
+        "address": "I-80, EXIT 27",
+        "city": "Atkinson",
+        "state": "IL"
+      },
+      "operator_reference": {
+        "A": "766",
+        "B": "Atkinson",
+        "C": "IL",
+        "D": "135"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -90.01747038275414,
+            41.41057180369678
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1256838183,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/766",
+              "hgv": "designated",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "1807",
+        "name": "LOVES TRAVEL STOP #229",
+        "address": "I-40 EXIT 96 & SR-207",
+        "city": "Panhandle",
+        "state": "TX"
+      },
+      "operator_reference": {
+        "A": "229",
+        "B": "Panhandle/Claude",
+        "C": "TX",
+        "D": "1807"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -101.3819721,
+            35.2187921
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "TX",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225720538,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/229"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "20050",
+        "name": "LOVES TRAVEL STOP #260",
+        "address": "I-35, EXIT 106 & SR-9 W",
+        "city": "Norman",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "260",
+        "B": "Newcastle/Norman",
+        "C": "OK",
+        "D": "20050"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.49921408050625,
+            35.183395484369974
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 669010289,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/260",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "2923",
+        "name": "LOVES TRAVEL STOPS #435",
+        "address": "I-95, EXIT 104 & SR-207",
+        "city": "Ruther Glen",
+        "state": "VA"
+      },
+      "operator_reference": {
+        "A": "435",
+        "B": "Ruther Glen",
+        "C": "VA",
+        "D": "2923"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.46630675,
+            37.93759754999999
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "VA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 781067019,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 435,
+              "hgv": "yes",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "3974",
+        "name": "LOVES TRAVEL STOP #201",
+        "address": "I-40 EXIT 41",
+        "city": "Elk City",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "201",
+        "B": "Elk City",
+        "C": "OK",
+        "D": "3974"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -99.3720661,
+            35.422891
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11711407862,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/201",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "52455",
+        "name": "LOVES TRAVEL STOP #266",
+        "address": "I-35, EXIT 32",
+        "city": "Ardmore",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "266",
+        "B": "Ardmore",
+        "C": "OK",
+        "D": "52455"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.1712723,
+            34.1881984
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1608318103,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/266",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "52480",
+        "name": "LOVES TRAVEL STOP #268",
+        "address": "US6-9 & US-75",
+        "city": "Atoka",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "268",
+        "B": "Atoka",
+        "C": "OK",
+        "D": "52480"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.14124441685338,
+            34.36673661109291
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 226285320,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/268",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "52580",
+        "name": "LOVES TRAVEL STOPS #405",
+        "address": "I-95, EXIT 29",
+        "city": "Brunswick",
+        "state": "GA"
+      },
+      "operator_reference": {
+        "A": "405",
+        "B": "Brunswick",
+        "C": "GA",
+        "D": "52580"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.5718894,
+            31.1374418
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "GA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 5486357522,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 405,
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "52636",
+        "name": "LOVES TRAVEL STOP #414",
+        "address": "I-64, EXIT 25B & US-41",
+        "city": "Haubstadt",
+        "state": "IN"
+      },
+      "operator_reference": {
+        "A": "414",
+        "B": "Haubstadt/Evansville",
+        "C": "IN",
+        "D": "52636"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.55115280519381,
+            38.17349508691931
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IN",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 223485831,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/414",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "52658",
+        "name": "LOVES TRAVEL STOP #274",
+        "address": "I-40, EXIT 221 & SR-27",
+        "city": "Okemah",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "274",
+        "B": "Okemah",
+        "C": "OK",
+        "D": "52658"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.3011608,
+            35.4210079
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11684356605,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/274",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "52659",
+        "name": "LOVES TRAVEL STOP #276",
+        "address": "I-10, EXIT 20",
+        "city": "Lordsburg",
+        "state": "NM"
+      },
+      "operator_reference": {
+        "A": "276",
+        "B": "Lordsburg",
+        "C": "NM",
+        "D": "52659"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -108.73570889677127,
+            32.35415319953021
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "NM",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1034926392,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/276",
+              "hgv": "designated"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "52679",
+        "name": "LOVES TRAVEL STOP #404",
+        "address": "I-295, EXIT 56 & I-95, EXIT 7",
+        "city": "Bordentown",
+        "state": "NJ"
+      },
+      "operator_reference": {
+        "A": "404",
+        "B": "Bordentown",
+        "C": "NJ",
+        "D": "52679"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -74.70816616075221,
+            40.119917199775614
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "NJ",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 217783539,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/404",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "52690",
+        "name": "LOVES TRAVEL STOP #415",
+        "address": "I-95 & OKEECHOBEE RD, EXIT 129",
+        "city": "Fort Pierce",
+        "state": "FL"
+      },
+      "operator_reference": {
+        "A": "415",
+        "B": "Fort Pierce",
+        "C": "FL",
+        "D": "52690"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.39781850000001,
+            27.413360249999997
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "FL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 223432255,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/415"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "63353",
+        "name": "LOVES TRAVEL STOP #367",
+        "address": "I-74, EXIT 149",
+        "city": "Le Roy",
+        "state": "IL"
+      },
+      "operator_reference": {
+        "A": "367",
+        "B": "Leroy",
+        "C": "IL",
+        "D": "63353"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.76093417914892,
+            40.340439652828344
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 14975666,
+              "osm_type": "r",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/367"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "63501",
+        "name": "LOVES TRAVEL STOP #407",
+        "address": "I-81 EXIT 52B OR I-76 EXIT 226",
+        "city": "Carlisle",
+        "state": "PA"
+      },
+      "operator_reference": {
+        "A": "407",
+        "B": "Carlisle",
+        "C": "PA",
+        "D": "63501"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -77.14381178977168,
+            40.23004329487658
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "PA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 659716944,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/407",
+              "hgv": "yes",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "63724",
+        "name": "LOVES TRAVEL STOP #244",
+        "address": "I-40, EXIT 87 & US-70/US-412",
+        "city": "Jackson",
+        "state": "TN"
+      },
+      "operator_reference": {
+        "A": "244",
+        "B": "Jackson",
+        "C": "TN",
+        "D": "63724"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.74195226572151,
+            35.67929081602688
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "TN",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 226611047,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/244",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "63727",
+        "name": "LOVES TRAVEL STOP #403",
+        "address": "I-81, EXIT 3",
+        "city": "Binghamton",
+        "state": "NY"
+      },
+      "operator_reference": {
+        "A": "403",
+        "B": "Binghamton",
+        "C": "NY",
+        "D": "63727"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -75.83534685242769,
+            42.1015414045245
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "NY",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 217816928,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/403",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "63764",
+        "name": "LOVES TRAVEL STOP #288",
+        "address": "I-45, EXIT 198 & US-84",
+        "city": "Fairfield",
+        "state": "TX"
+      },
+      "operator_reference": {
+        "A": "288",
+        "B": "Fairfield",
+        "C": "TX",
+        "D": "63764"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.18237508039537,
+            31.728244238427138
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "TX",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225725168,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/288",
+              "hgv": "no",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "63799",
+        "name": "LOVES TRAVEL STOP #204",
+        "address": "US-69 BUS & US-69",
+        "city": "Eufaula",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "204",
+        "B": "Eufaula",
+        "C": "OK",
+        "D": "63799"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.58863812248472,
+            35.30555421109377
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 226291362,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/204",
+              "hgv": "only",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66120",
+        "name": "LOVES TRAVEL STOP #306",
+        "address": "I-40/SR-66, EXIT 412",
+        "city": "Dandridge",
+        "state": "TN"
+      },
+      "operator_reference": {
+        "A": "306",
+        "B": "Dandridge",
+        "C": "TN",
+        "D": "66120"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -83.5323062,
+            36.0119881
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "TN",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 6616599586,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 306,
+              "website": "https://www.loves.com/locations/306",
+              "hgv": "yes",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66126",
+        "name": "LOVES TRAVEL STOP #209",
+        "address": "I-20, EXIT 3 & US-80 & SR-169",
+        "city": "Greenwood",
+        "state": "LA"
+      },
+      "operator_reference": {
+        "A": "209",
+        "B": "Greenwood",
+        "C": "LA",
+        "D": "66126"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -93.98358301478565,
+            32.44442413492925
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "LA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225809913,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/209",
+              "hgv": "only",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66133",
+        "name": "LOVES TRAVEL STOP #228",
+        "address": "I-4, EXIT 44",
+        "city": "Polk City",
+        "state": "FL"
+      },
+      "operator_reference": {
+        "A": "228",
+        "B": "Auburndale/Polk City",
+        "C": "FL",
+        "D": "66133"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.80115387596517,
+            28.155276635483652
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "FL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 224604084,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/228",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66235",
+        "name": "LOVES TRAVEL STOP #291",
+        "address": "I-75, EXIT 95 & SR-627",
+        "city": "Richmond",
+        "state": "KY"
+      },
+      "operator_reference": {
+        "A": "291",
+        "B": "Richmond",
+        "C": "KY",
+        "D": "66235"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.32445691477129,
+            37.84286423632591
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "KY",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225808104,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/291",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66257",
+        "name": "LOVES TRAVEL STOPS #310",
+        "address": "I-80/US-30, EXIT 173",
+        "city": "Wamsutter",
+        "state": "WY"
+      },
+      "operator_reference": {
+        "A": "310",
+        "B": "Wamsutter",
+        "C": "WY",
+        "D": "66257"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -107.982929,
+            41.6756324
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "WY",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1038018936,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/310",
+              "hgv": "designated",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66292",
+        "name": "LOVES TRAVEL STOP #311",
+        "address": "I-20, EXIT 9",
+        "city": "Waco",
+        "state": "GA"
+      },
+      "operator_reference": {
+        "A": "311",
+        "B": "Waco",
+        "C": "GA",
+        "D": "66292"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.19012132444912,
+            33.69130942150514
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "GA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225051151,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/311",
+              "hgv": "designated"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66295",
+        "name": "LOVES TRAVEL STOPS #432",
+        "address": "I-94/I-41,  EXIT 322 & SR-100",
+        "city": "Oak Creek",
+        "state": "WI"
+      },
+      "operator_reference": {
+        "A": "432",
+        "B": "Oak Creek",
+        "C": "WI",
+        "D": "66295"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.9415223,
+            42.8712569
+          ]
+        },
+        "properties": {
+          "name": "Love's Travel Stop",
+          "country_code": "us",
+          "state_code": "WI",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 635243687,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's Travel Stop",
+              "website": "https://www.loves.com/locations/432",
+              "hgv": "no",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66747",
+        "name": "LOVES TRAVEL STOP #322",
+        "address": "I-90, EXIT 3",
+        "city": "Roscoe",
+        "state": "IL"
+      },
+      "operator_reference": {
+        "A": "322",
+        "B": "Roscoe",
+        "C": "IL",
+        "D": "66747"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.99811382488282,
+            42.45558494432576
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225052242,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/322",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66760",
+        "name": "LOVES TRAVEL STOP #326",
+        "address": "I-26 EXIT 154A",
+        "city": "Orangeburg",
+        "state": "SC"
+      },
+      "operator_reference": {
+        "A": "326",
+        "B": "Orangeburg",
+        "C": "SC",
+        "D": "66760"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.735532,
+            33.4583721
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "SC",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11687451782,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/326",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66899",
+        "name": "LOVES TRAVEL STOP #333",
+        "address": "I-77, EXIT 83",
+        "city": "Fort Mill",
+        "state": "SC"
+      },
+      "operator_reference": {
+        "A": "333",
+        "B": "Fort Mill",
+        "C": "SC",
+        "D": "66899"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.97826959996374,
+            35.00043168589148
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "SC",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225349683,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/333",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66912",
+        "name": "LOVES TRAVEL STOPS #335",
+        "address": "I-15, EXIT 62 & SR-130",
+        "city": "Cedar City",
+        "state": "UT"
+      },
+      "operator_reference": {
+        "A": "335",
+        "B": "Cedar City",
+        "C": "UT",
+        "D": "66912"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -113.05195495207313,
+            37.725774842161215
+          ]
+        },
+        "properties": {
+          "name": "Love's Truck Lanes",
+          "country_code": "us",
+          "state_code": "UT",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225054742,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's Truck Lanes",
+              "website": "https://www.loves.com/locations/335",
+              "hgv": "yes",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66923",
+        "name": "LOVES TRAVEL STOP #765",
+        "address": "I-85, EXIT 147",
+        "city": "Commerce",
+        "state": "GA"
+      },
+      "operator_reference": {
+        "A": "765",
+        "B": "Commerce",
+        "C": "GA",
+        "D": "66923"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -83.4998274,
+            34.2271699
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "GA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11684386991,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/765",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66953",
+        "name": "LOVES TRAVEL STOP #355",
+        "address": "I-65, EXIT 16",
+        "city": "Memphis",
+        "state": "IN"
+      },
+      "operator_reference": {
+        "A": "355",
+        "B": "Memphis",
+        "C": "IN",
+        "D": "66953"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.76916563449741,
+            38.490519162704985
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IN",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225342535,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/355"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66956",
+        "name": "LOVES TRAVEL STOP #348",
+        "address": "I-69/I-24, EXIT 27 & US-62",
+        "city": "Calvert City",
+        "state": "KY"
+      },
+      "operator_reference": {
+        "A": "348",
+        "B": "Calvert City",
+        "C": "KY",
+        "D": "66956"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.31855069027436,
+            37.00421576177338
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "KY",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225806477,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/348",
+              "hgv": "yes",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66987",
+        "name": "LOVES TRAVEL STOP #354",
+        "address": "US-78 & I-20, EXIT 172",
+        "city": "Thomson",
+        "state": "GA"
+      },
+      "operator_reference": {
+        "A": "354",
+        "B": "Thomson",
+        "C": "GA",
+        "D": "66987"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.50319019999999,
+            33.514224799999994
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "GA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225050857,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/354",
+              "hgv": "no",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "66997",
+        "name": "LOVES TRAVEL STOP #289",
+        "address": "I-20, EXIT 49 & SR-531",
+        "city": "Minden",
+        "state": "LA"
+      },
+      "operator_reference": {
+        "A": "289",
+        "B": "Minden",
+        "C": "LA",
+        "D": "66997"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -93.24936157796023,
+            32.58212297472486
+          ]
+        },
+        "properties": {
+          "name": "Love's Diesel Station",
+          "country_code": "us",
+          "state_code": "LA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225869960,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's Diesel Station",
+              "website": "https://www.loves.com/locations/289",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67037",
+        "name": "LOVES TRAVEL STOP #332",
+        "address": "I-71 EXIT 204",
+        "city": "Burbank",
+        "state": "OH"
+      },
+      "operator_reference": {
+        "A": "332",
+        "B": "Lodi/Burbank",
+        "C": "OH",
+        "D": "67037"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.99437854042874,
+            40.99654624994512
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OH",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225055027,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 332,
+              "website": "http://myloves332.com/",
+              "hgv": "designated"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67064",
+        "name": "LOVES TRAVEL STOP #385",
+        "address": "I-40, EXIT 101 & US-281",
+        "city": "Hinton",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "385",
+        "B": "Hinton",
+        "C": "OK",
+        "D": "67064"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.35199333938861,
+            35.52627361734846
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 226291693,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/385",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67081",
+        "name": "LOVES TRAVEL STOP #376",
+        "address": "I-85/SR-403, EXIT 28 & SR-54/SR-100",
+        "city": "Hogansville",
+        "state": "GA"
+      },
+      "operator_reference": {
+        "A": "376",
+        "B": "Hogansville",
+        "C": "GA",
+        "D": "67081"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -84.8712874,
+            33.159848600000004
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "GA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225050448,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 376,
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67133",
+        "name": "LOVES TRAVEL STOP #365",
+        "address": "I-80 EXIT 352",
+        "city": "Wells",
+        "state": "NV"
+      },
+      "operator_reference": {
+        "A": "365",
+        "B": "Wells",
+        "C": "NV",
+        "D": "67133"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -114.95973779310646,
+            41.09886706118501
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "NV",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 220070308,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/365",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67284",
+        "name": "LOVES TRAVEL STOP #390",
+        "address": "I-80, EXIT 179",
+        "city": "North Platte",
+        "state": "NE"
+      },
+      "operator_reference": {
+        "A": "390",
+        "B": "North Platte",
+        "C": "NE",
+        "D": "67284"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -100.72337800261079,
+            41.10292520544258
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "NE",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225057381,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/390",
+              "hgv": "designated",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67316",
+        "name": "LOVES TRAVEL STOP #302",
+        "address": "US-287 & US-412",
+        "city": "Boise City",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "302",
+        "B": "Boise City",
+        "C": "OK",
+        "D": "67316"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -102.50001608048008,
+            36.72909208210135
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 226285797,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/302",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67357",
+        "name": "LOVES TRAVEL STOP #353",
+        "address": "I-29, EXIT 62",
+        "city": "Fargo",
+        "state": "ND"
+      },
+      "operator_reference": {
+        "A": "353",
+        "B": "Fargo",
+        "C": "ND",
+        "D": "67357"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -96.84487924269574,
+            46.832076603703456
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "ND",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225056492,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 353,
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67623",
+        "name": "LOVES TRAVEL STOP #301",
+        "address": "I-90, EXIT 2",
+        "city": "Post Falls",
+        "state": "ID"
+      },
+      "operator_reference": {
+        "A": "301",
+        "B": "Post Falls",
+        "C": "ID",
+        "D": "67623"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -117.00393164252257,
+            47.710864381716284
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "ID",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 223313114,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/301",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67624",
+        "name": "LOVES TRAVEL STOP #300",
+        "address": "I-70 EXIT 304",
+        "city": "Bennett",
+        "state": "CO"
+      },
+      "operator_reference": {
+        "A": "300",
+        "B": "Bennett",
+        "C": "CO",
+        "D": "67624"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -104.43433597624927,
+            39.74072366339429
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "CO",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 224603696,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/300",
+              "hgv": "yes",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67635",
+        "name": "LOVES TRAVEL STOP #456",
+        "address": "I-280 EXIT 1B",
+        "city": "Perrysburg",
+        "state": "OH"
+      },
+      "operator_reference": {
+        "A": "456",
+        "B": "Perrysburg/Lake Township",
+        "C": "OH",
+        "D": "67635"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -83.46661504999999,
+            41.537125800000005
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OH",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 223010493,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/456",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67636",
+        "name": "LOVES TRAVEL STOP #258",
+        "address": "I-35, EXIT 183",
+        "city": "Ottawa",
+        "state": "KS"
+      },
+      "operator_reference": {
+        "A": "258",
+        "B": "Ottawa",
+        "C": "KS",
+        "D": "67636"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.2659971,
+            38.5726626
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "KS",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1881267062,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/258",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67815",
+        "name": "LOVES TRAVEL STOP #254",
+        "address": "I-70, EXIT 59 & SR-39",
+        "city": "Mooresville",
+        "state": "IN"
+      },
+      "operator_reference": {
+        "A": "254",
+        "B": "Belleville/Mooresville",
+        "C": "IN",
+        "D": "67815"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.47799931702963,
+            39.61604254943109
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IN",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 229464672,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/254",
+              "hgv": "designated",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "67943",
+        "name": "LOVES TRAVEL STOP #459",
+        "address": "I-65, EXIT 133 & SR-267",
+        "city": "Whitestown",
+        "state": "IN"
+      },
+      "operator_reference": {
+        "A": "459",
+        "B": "Whitestown",
+        "C": "IN",
+        "D": "67943"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.3953227970263,
+            39.97912632043042
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IN",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225347312,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 459,
+              "website": "https://www.loves.com/locations/459",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "68367",
+        "name": "LOVES TRAVEL STOP #447",
+        "address": "I-10 E, EXIT 0",
+        "city": "Anthony",
+        "state": "TX"
+      },
+      "operator_reference": {
+        "A": "447",
+        "B": "Anthony",
+        "C": "TX",
+        "D": "68367"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -106.58115090117343,
+            31.999010769652852
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "TX",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225718777,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/447",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69073",
+        "name": "LOVES TRAVEL STOP #518",
+        "address": "I-15, EXIT 260 & SR-77",
+        "city": "Springville",
+        "state": "UT"
+      },
+      "operator_reference": {
+        "A": "518",
+        "B": "Springville",
+        "C": "UT",
+        "D": "69073"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -111.65185483248165,
+            40.16297272500591
+          ]
+        },
+        "properties": {
+          "name": "Love's Diesel Lanes",
+          "country_code": "us",
+          "state_code": "UT",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 923227496,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's Diesel Lanes",
+              "website": "https://www.loves.com/locations/518",
+              "hgv": "yes",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69152",
+        "name": "LOVES TRAVEL STOP #557",
+        "address": "US-64/167, EXIT 44 & SR-367",
+        "city": "Searcy",
+        "state": "AR"
+      },
+      "operator_reference": {
+        "A": "557",
+        "B": "Searcy",
+        "C": "AR",
+        "D": "69152"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -91.7169866,
+            35.2188202
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "AR",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11684379542,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/557"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69223",
+        "name": "LOVES TRAVEL STOP #566",
+        "address": "US-231/CR-53, EXIT 12",
+        "city": "Ozark",
+        "state": "AL"
+      },
+      "operator_reference": {
+        "A": "566",
+        "B": "Ozark",
+        "C": "AL",
+        "D": "69223"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.61891059701622,
+            31.42766585583822
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "AL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1147422695,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/566",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69239",
+        "name": "LOVES TRAVEL STOP #580",
+        "address": "SR-20/157 & SR-133",
+        "city": "Tuscumbia",
+        "state": "AL"
+      },
+      "operator_reference": {
+        "A": "580",
+        "B": "Muscle Shoals/Tuscumbia",
+        "C": "AL",
+        "D": "69239"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.6360941,
+            34.6968317
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "AL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 5474122686,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 580,
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69290",
+        "name": "LOVES TRAVEL STOP #587",
+        "address": "I-41/US-45, EXIT 97",
+        "city": "Fond Du Lac",
+        "state": "WI"
+      },
+      "operator_reference": {
+        "A": "587",
+        "B": "Fond Du Lac",
+        "C": "WI",
+        "D": "69290"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -88.4653926,
+            43.7490172
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "WI",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 4108451495,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/587",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69307",
+        "name": "LOVES TRAVEL STOP #578",
+        "address": "I-55 EXIT 30 & SR-140",
+        "city": "Hamel",
+        "state": "IL"
+      },
+      "operator_reference": {
+        "A": "578",
+        "B": "Hamel",
+        "C": "IL",
+        "D": "69307"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.83453184999998,
+            38.89052135
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1324624103,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/578",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69439",
+        "name": "LOVES TRAVEL STOP #608",
+        "address": "I-135, EXIT 60 & US-56",
+        "city": "Mcpherson",
+        "state": "KS"
+      },
+      "operator_reference": {
+        "A": "608",
+        "B": "McPherson",
+        "C": "KS",
+        "D": "69439"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.6157677,
+            38.3701266
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "KS",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11691875860,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/608",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69496",
+        "name": "LOVES TRAVEL STOP #601",
+        "address": "I-70, EXIT 115 & SR-109",
+        "city": "Knightstown",
+        "state": "IN"
+      },
+      "operator_reference": {
+        "A": "601",
+        "B": "Knightstown",
+        "C": "IN",
+        "D": "69496"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.557363,
+            39.8432791
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IN",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 9588805132,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 601,
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69668",
+        "name": "LOVES TRAVEL STOP #643",
+        "address": "I-55/57, EXIT 66A & US-60",
+        "city": "Sikeston",
+        "state": "MO"
+      },
+      "operator_reference": {
+        "A": "643",
+        "B": "Sikeston",
+        "C": "MO",
+        "D": "69668"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.58436555006286,
+            36.853684945584504
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "MO",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1259731684,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/643",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69740",
+        "name": "LOVES TRAVEL STOP #613",
+        "address": "I-81, EXIT 24 & SR-80",
+        "city": "Meadowview",
+        "state": "VA"
+      },
+      "operator_reference": {
+        "A": "613",
+        "B": "Meadowview",
+        "C": "VA",
+        "D": "69740"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -81.8560062,
+            36.7565063
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "VA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11712125861,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/613",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69741",
+        "name": "LOVES TRAVEL STOP #659",
+        "address": "I-10, EXIT 133B",
+        "city": "Tolleson",
+        "state": "AZ"
+      },
+      "operator_reference": {
+        "A": "659",
+        "B": "Tolleson",
+        "C": "AZ",
+        "D": "69741"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -112.23920149427616,
+            33.45853548287876
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "AZ",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1004594292,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/659",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69743",
+        "name": "LOVES TRAVEL STOP #647",
+        "address": "US-81",
+        "city": "Belleville",
+        "state": "KS"
+      },
+      "operator_reference": {
+        "A": "647",
+        "B": "Belleville",
+        "C": "KS",
+        "D": "69743"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.63727810981165,
+            39.835164270773745
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "KS",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1135802508,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/647",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69789",
+        "name": "LOVES TRAVEL STOP #620",
+        "address": "US-301 & SR-20",
+        "city": "Hawthorne",
+        "state": "FL"
+      },
+      "operator_reference": {
+        "A": "620",
+        "B": "Hawthorne",
+        "C": "FL",
+        "D": "69789"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.0860243,
+            29.6022488
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "FL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11695252750,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/620",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69855",
+        "name": "LOVES TRAVEL STOP #670",
+        "address": "US-18",
+        "city": "Floyd",
+        "state": "IA"
+      },
+      "operator_reference": {
+        "A": "670",
+        "B": "Floyd",
+        "C": "IA",
+        "D": "69855"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.7346069233474,
+            43.122429769907235
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1256837490,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/670",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "6986",
+        "name": "LOVES TRAVEL STOPS #448",
+        "address": "I-5, EXIT 136B, SR-509",
+        "city": "Tacoma",
+        "state": "WA"
+      },
+      "operator_reference": {
+        "A": "448",
+        "B": "Tacoma",
+        "C": "WA",
+        "D": "6986"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -122.38458767333127,
+            47.24494319926058
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "WA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 225046866,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/448",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69875",
+        "name": "LOVES TRAVEL STOP #680",
+        "address": "US-81",
+        "city": "Norfolk",
+        "state": "NE"
+      },
+      "operator_reference": {
+        "A": "680",
+        "B": "Norfolk",
+        "C": "NE",
+        "D": "69875"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.428233001309,
+            42.01176941655146
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "NE",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1258805549,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/680"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69877",
+        "name": "LOVES TRAVEL STOP #669",
+        "address": "US-61 & SR-19",
+        "city": "New London",
+        "state": "MO"
+      },
+      "operator_reference": {
+        "A": "669",
+        "B": "New London",
+        "C": "MO",
+        "D": "69877"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -91.40441735338702,
+            39.57422825738867
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "MO",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1257599261,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/669",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69900",
+        "name": "LOVES TRAVEL STOP #605",
+        "address": "I-70, EXIT 59 & SR-41",
+        "city": "Springfield",
+        "state": "OH"
+      },
+      "operator_reference": {
+        "A": "605",
+        "B": "Springfield",
+        "C": "OH",
+        "D": "69900"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -83.7222527,
+            39.8938824
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OH",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 5827482088,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 605,
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69906",
+        "name": "LOVES TRAVEL STOP #692",
+        "address": "US-169 & SR-39",
+        "city": "Chanute",
+        "state": "KS"
+      },
+      "operator_reference": {
+        "A": "692",
+        "B": "Chanute",
+        "C": "KS",
+        "D": "69906"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.4758652,
+            37.647071450000006
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "KS",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1100890474,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/692",
+              "hgv": "yes",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69957",
+        "name": "LOVES TRAVE STOP #698",
+        "address": "I-75/SR-401, EXIT 153",
+        "city": "Macon",
+        "state": "GA"
+      },
+      "operator_reference": {
+        "A": "698",
+        "B": "Macon",
+        "C": "GA",
+        "D": "69957"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -83.7326244,
+            32.7174739
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "GA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11691981008,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/698",
+              "hgv": "only",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69975",
+        "name": "LOVES TRAVEL STOP #703",
+        "address": "US-50",
+        "city": "South Hutchinson",
+        "state": "KS"
+      },
+      "operator_reference": {
+        "A": "703",
+        "B": "South Hutchinson",
+        "C": "KS",
+        "D": "69975"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.9412661,
+            38.0143553
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "KS",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11487080977,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 703,
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "69988",
+        "name": "LOVES TRAVEL STOP #640",
+        "address": "I-43, EXIT 120 & CR-OK",
+        "city": "Sheboygan",
+        "state": "WI"
+      },
+      "operator_reference": {
+        "A": "640",
+        "B": "Wilson Township/Sheboygan",
+        "C": "WI",
+        "D": "69988"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.75821264794025,
+            43.67725881286134
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "WI",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1256825583,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/640",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70095",
+        "name": "LOVES TRAVEL STOP #713",
+        "address": "US-380 & FM-1304",
+        "city": "Bridgeport",
+        "state": "TX"
+      },
+      "operator_reference": {
+        "A": "713",
+        "B": "Bridgeport",
+        "C": "TX",
+        "D": "70095"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.73836736441037,
+            33.2211937279296
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "TX",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1054505828,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/713",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70100",
+        "name": "LOVES TRAVEL STOP #718",
+        "address": "I-65, EXIT 158",
+        "city": "Hope Hull",
+        "state": "AL"
+      },
+      "operator_reference": {
+        "A": "718",
+        "B": "Hope Hull",
+        "C": "AL",
+        "D": "70100"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -86.41453500992831,
+            32.19638768499156
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "AL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1259755653,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/718",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70107",
+        "name": "LOVES TRAVEL STOP #711",
+        "address": "I-71, EXIT 165 & SR-97",
+        "city": "Bellville",
+        "state": "OH"
+      },
+      "operator_reference": {
+        "A": "711",
+        "B": "Bellville",
+        "C": "OH",
+        "D": "70107"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.54607275000001,
+            40.652450599999995
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OH",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1017955731,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/711",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70157",
+        "name": "LOVES TRAVEL STOP #702",
+        "address": "US-63",
+        "city": "Waterloo",
+        "state": "IA"
+      },
+      "operator_reference": {
+        "A": "702",
+        "B": "Waterloo",
+        "C": "IA",
+        "D": "70157"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.40384902708155,
+            42.46218126641539
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1073996101,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 702,
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70174",
+        "name": "LOVES TRAVEL STOP #701",
+        "address": "I-69, EXIT 176",
+        "city": "Capac",
+        "state": "MI"
+      },
+      "operator_reference": {
+        "A": "701",
+        "B": "Capac",
+        "C": "MI",
+        "D": "70174"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -82.930094,
+            42.9896575
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "MI",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11711729189,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/701",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70191",
+        "name": "LOVES TRAVEL STOP #734",
+        "address": "I-44, EXIT 5 & US-70",
+        "city": "Randlett",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "734",
+        "B": "Randlett",
+        "C": "OK",
+        "D": "70191"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -98.49866915295911,
+            34.172644574819714
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1080391283,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/734",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70192",
+        "name": "LOVES TRAVEL STOP #720",
+        "address": "I-49, EXIT 94 & SR-1",
+        "city": "Boyce",
+        "state": "LA"
+      },
+      "operator_reference": {
+        "A": "720",
+        "B": "Boyce",
+        "C": "LA",
+        "D": "70192"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -92.5888854,
+            31.3609086
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "LA",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11114476149,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/720",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70236",
+        "name": "LOVES TRAVEL STOP #733",
+        "address": "I-25, EXIT 347",
+        "city": "Las Vegas",
+        "state": "NM"
+      },
+      "operator_reference": {
+        "A": "733",
+        "B": "Las Vegas",
+        "C": "NM",
+        "D": "70236"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -105.2081573,
+            35.6197155
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "NM",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11687464539,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/733",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70254",
+        "name": "LOVES TRAVEL STOP #732",
+        "address": "I-70 & CR-829",
+        "city": "Abilene",
+        "state": "KS"
+      },
+      "operator_reference": {
+        "A": "732",
+        "B": "Abilene",
+        "C": "KS",
+        "D": "70254"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.25895612485849,
+            38.93342603736196
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "KS",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1257615931,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/732",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70305",
+        "name": "LOVES TRAVEL STOP #737",
+        "address": "I-40/US-270",
+        "city": "El Reno",
+        "state": "OK"
+      },
+      "operator_reference": {
+        "A": "737",
+        "B": "El Reno",
+        "C": "OK",
+        "D": "70305"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -97.90258972485576,
+            35.49732735244645
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "OK",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1259752265,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/737",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70380",
+        "name": "LOVES TRAVEL STOP #714",
+        "address": "I-85, EXIT 29",
+        "city": "Charlotte",
+        "state": "NC"
+      },
+      "operator_reference": {
+        "A": "714",
+        "B": "Charlotte",
+        "C": "NC",
+        "D": "70380"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.9802139,
+            35.2551955
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "NC",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11711708211,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/714",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70406",
+        "name": "LOVES TRAVEL STOP #754",
+        "address": "SR-251",
+        "city": "Rochelle",
+        "state": "IL"
+      },
+      "operator_reference": {
+        "A": "754",
+        "B": "Rochelle",
+        "C": "IL",
+        "D": "70406"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -89.0658724,
+            41.8981485
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11707829623,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/754",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70495",
+        "name": "LOVES TRAVEL STOP #689",
+        "address": "US-65 & US-82",
+        "city": "Lake Village",
+        "state": "AR"
+      },
+      "operator_reference": {
+        "A": "689",
+        "B": "Lake Village",
+        "C": "AR",
+        "D": "70495"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -91.2926119,
+            33.3304703
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "AR",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11136615064,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/689"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70580",
+        "name": "LOVES TRAVEL STOP #753",
+        "address": "I-90 EXIT 96 & SR-474",
+        "city": "Missoula",
+        "state": "MT"
+      },
+      "operator_reference": {
+        "A": "753",
+        "B": "Missoula",
+        "C": "MT",
+        "D": "70580"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -114.133624,
+            46.9470198
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "MT",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 7798799746,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/753",
+              "hgv": "designated"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70583",
+        "name": "LOVES TRAVEL STOP #783",
+        "address": "US-60 & US-63",
+        "city": "Willow Springs",
+        "state": "MO"
+      },
+      "operator_reference": {
+        "A": "783",
+        "B": "Willow Springs",
+        "C": "MO",
+        "D": "70583"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -91.94017149267874,
+            36.97467014264085
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "MO",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 1257614603,
+              "osm_type": "w",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/783",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70592",
+        "name": "LOVES TRAVEL STOP #751",
+        "address": "I-20, EXIT 87",
+        "city": "Elgin",
+        "state": "SC"
+      },
+      "operator_reference": {
+        "A": "751",
+        "B": "Kershaw County/Elgin",
+        "C": "SC",
+        "D": "70592"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.7489165,
+            34.1396983
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "SC",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 10228325504,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/751",
+              "hgv": "only"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70638",
+        "name": "LOVES TRAVEL STOP #769",
+        "address": "I-70, EXIT 358A & US-75",
+        "city": "Topeka",
+        "state": "KS"
+      },
+      "operator_reference": {
+        "A": "769",
+        "B": "Topeka",
+        "C": "KS",
+        "D": "70638"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -95.7259068,
+            39.0819108
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "KS",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11390050274,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "ref": 769,
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70642",
+        "name": "LOVES TRAVEL STOP #776",
+        "address": "I-20, EXIT 15",
+        "city": "Vicksburg",
+        "state": "MS"
+      },
+      "operator_reference": {
+        "A": "776",
+        "B": "Vicksburg",
+        "C": "MS",
+        "D": "70642"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -90.667372,
+            32.3627543
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "MS",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 10858239573,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/776",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70643",
+        "name": "LOVES TRAVEL STOP #774",
+        "address": "US-431/CR-248",
+        "city": "Smiths Station",
+        "state": "AL"
+      },
+      "operator_reference": {
+        "A": "774",
+        "B": "Smiths Station",
+        "C": "AL",
+        "D": "70643"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -85.082787,
+            32.5369142
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "AL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 10134120317,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/774",
+              "hgv": "no"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70656",
+        "name": "LOVES TRAVEL STOP #757",
+        "address": "US-23, EXIT 25",
+        "city": "Milan",
+        "state": "MI"
+      },
+      "operator_reference": {
+        "A": "757",
+        "B": "Milan",
+        "C": "MI",
+        "D": "70656"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -83.6675212,
+            42.0764458
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "MI",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 7836942385,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/757/",
+              "hgv": "no",
+              "fuel:diesel": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "70877",
+        "name": "LOVES TRAVEL STOP #770",
+        "address": "US-41, EXIT 1A",
+        "city": "Wadsworth",
+        "state": "IL"
+      },
+      "operator_reference": {
+        "A": "770",
+        "B": "Wadsworth",
+        "C": "IL",
+        "D": "70877"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -87.9535097,
+            42.489238
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "IL",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11711832126,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/770",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    },
+    {
+      "station": {
+        "opis_id": "7198",
+        "name": "LOVES TRAVEL STOP #507",
+        "address": "I-85, EXIT 71",
+        "city": "Salisbury",
+        "state": "NC"
+      },
+      "operator_reference": {
+        "A": "507",
+        "B": "Salisbury",
+        "C": "NC",
+        "D": "7198"
+      },
+      "feature": {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            -80.5180934,
+            35.6086341
+          ]
+        },
+        "properties": {
+          "name": "Love's",
+          "country_code": "us",
+          "state_code": "NC",
+          "datasource": {
+            "sourcename": "openstreetmap",
+            "attribution": "OpenStreetMap contributors",
+            "license": "ODbL 1.0",
+            "raw": {
+              "osm_id": 11670164686,
+              "osm_type": "n",
+              "amenity": "fuel",
+              "brand": "Love's",
+              "name": "Love's",
+              "website": "https://www.loves.com/locations/507",
+              "hgv": "yes"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
