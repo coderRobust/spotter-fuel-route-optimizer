@@ -39,7 +39,43 @@
           "raw": "{\n  \"start\": \"Chicago, IL\",\n  \"finish\": \"Los Angeles, CA\",\n  \"vehicle\": {\n    \"max_range_miles\": 500,\n    \"mpg\": 10,\n    \"starting_fuel_gallons\": 50\n  }\n}"
         },
         "url": "{{baseUrl}}/api/v1/routes/optimize/"
-      }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "if (pm.response.code === 200) {",
+              "  const body = pm.response.json();",
+              "  pm.test(\"Multiple real fuel purchases\", () => pm.expect(body.fuel_plan.stops.length).to.be.at.least(2));",
+              "  pm.test(\"Verified coordinates only\", () => pm.expect(body.metadata.approximate_stations_allowed).to.eql(false));",
+              "  pm.test(\"Fuel balance\", () => pm.expect(Math.abs(50 + body.fuel_plan.total_gallons_purchased - body.fuel_plan.total_gallons_consumed - body.fuel_plan.final_fuel_gallons)).to.be.below(0.005));",
+              "  pm.collectionVariables.set(\"mapPath\", body.map_url);",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Open computed map (run the long route first)",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}{{mapPath}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Map HTML returned\", () => pm.response.to.have.status(200));"
+            ]
+          }
+        }
+      ]
     },
     {
       "name": "Invalid input (expect HTTP 400)",
@@ -56,7 +92,88 @@
           "raw": "{}"
         },
         "url": "{{baseUrl}}/api/v1/routes/optimize/"
-      }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 400\", () => pm.response.to.have.status(400));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "One purchase \u2014 Chicago to Oklahoma City",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start\": \"Chicago, IL\",\n  \"finish\": \"Oklahoma City, OK\",\n  \"vehicle\": {\n    \"max_range_miles\": 500,\n    \"mpg\": 10,\n    \"starting_fuel_gallons\": 50\n  }\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/routes/optimize/"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "if (pm.response.code === 200) {",
+              "  const body = pm.response.json();",
+              "  pm.test(\"Expected fuel purchases\", () => pm.expect(body.fuel_plan.stops.length).to.be.at.least(1));",
+              "  pm.test(\"Verified coordinates only\", () => pm.expect(body.metadata.approximate_stations_allowed).to.eql(false));",
+              "  pm.test(\"Fuel balance\", () => pm.expect(Math.abs(50 + body.fuel_plan.total_gallons_purchased - body.fuel_plan.total_gallons_consumed - body.fuel_plan.final_fuel_gallons)).to.be.below(0.005));",
+              "  pm.collectionVariables.set(\"mapPath\", body.map_url);",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Two purchases \u2014 Chicago to Denver",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"start\": \"Chicago, IL\",\n  \"finish\": \"Denver, CO\",\n  \"vehicle\": {\n    \"max_range_miles\": 500,\n    \"mpg\": 10,\n    \"starting_fuel_gallons\": 50\n  }\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/routes/optimize/"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", () => pm.response.to.have.status(200));",
+              "if (pm.response.code === 200) {",
+              "  const body = pm.response.json();",
+              "  pm.test(\"Expected fuel purchases\", () => pm.expect(body.fuel_plan.stops.length).to.be.at.least(2));",
+              "  pm.test(\"Verified coordinates only\", () => pm.expect(body.metadata.approximate_stations_allowed).to.eql(false));",
+              "  pm.test(\"Fuel balance\", () => pm.expect(Math.abs(50 + body.fuel_plan.total_gallons_purchased - body.fuel_plan.total_gallons_consumed - body.fuel_plan.final_fuel_gallons)).to.be.below(0.005));",
+              "  pm.collectionVariables.set(\"mapPath\", body.map_url);",
+              "}"
+            ]
+          }
+        }
+      ]
     }
   ]
 }

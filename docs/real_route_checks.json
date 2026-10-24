@@ -1,0 +1,290 @@
+{
+  "one-purchase": {
+    "request": {
+      "start": "Chicago, IL",
+      "finish": "Oklahoma City, OK",
+      "vehicle": {
+        "max_range_miles": 500,
+        "mpg": 10,
+        "starting_fuel_gallons": 50
+      }
+    },
+    "runs": [
+      {
+        "run": "uncached",
+        "status": 200,
+        "latency_seconds": 4.857,
+        "response_bytes": 214611,
+        "routing_calls": 1,
+        "geocoding_calls": 0,
+        "fuel_audit": "passed: station identity, source price, stop order, range, tank capacity, fuel balance and cost",
+        "response": {
+          "map_url": "/maps/7GCHW8B_mB7jDKaDAWLdx1SjxJaB6Ku5/",
+          "route": {
+            "distance_miles": 794.3114707059167,
+            "duration_minutes": 869.0,
+            "geometry": {
+              "omitted_from_report": true
+            }
+          },
+          "fuel_plan": {
+            "stops": [
+              {
+                "opis_id": "66937",
+                "name": "LOVES TRAVEL STOP #341",
+                "city": "Rolla",
+                "state": "MO",
+                "latitude": 37.981862504147806,
+                "longitude": -91.71895564456038,
+                "mile_marker": 397.01,
+                "offset_miles": 0.156,
+                "price_per_gallon_usd": 3.30067,
+                "gallons": 29.431,
+                "cost_usd": 97.14
+              }
+            ],
+            "total_gallons_purchased": 29.431,
+            "total_gallons_consumed": 79.431,
+            "total_cost_usd": 97.14,
+            "final_fuel_gallons": 0.0
+          },
+          "metadata": {
+            "routing_cache_hit": false,
+            "candidate_stations": 3,
+            "station_coordinate_precision": "mixed; see candidate_precision_counts",
+            "candidate_precision_counts": {
+              "station_verified": 3
+            },
+            "approximate_stations_allowed": false,
+            "station_distance_basis": "routing segment annotations",
+            "route_access": "projected proximity only; station detours are not verified",
+            "cost_basis": "additional purchases only; existing starting fuel excluded",
+            "notes": "Optimal purchases for the modeled fixed route and its approximate stations; not a global road-network optimum."
+          }
+        }
+      },
+      {
+        "run": "cached",
+        "status": 200,
+        "latency_seconds": 0.144,
+        "response_bytes": 214610,
+        "routing_calls": 0,
+        "geocoding_calls": 0,
+        "fuel_audit": "passed: station identity, source price, stop order, range, tank capacity, fuel balance and cost",
+        "response": {
+          "map_url": "/maps/9_jHU37B5BoAhhh1kHSAi7vOF5QxycYm/",
+          "route": {
+            "distance_miles": 794.3114707059167,
+            "duration_minutes": 869.0,
+            "geometry": {
+              "omitted_from_report": true
+            }
+          },
+          "fuel_plan": {
+            "stops": [
+              {
+                "opis_id": "66937",
+                "name": "LOVES TRAVEL STOP #341",
+                "city": "Rolla",
+                "state": "MO",
+                "latitude": 37.981862504147806,
+                "longitude": -91.71895564456038,
+                "mile_marker": 397.01,
+                "offset_miles": 0.156,
+                "price_per_gallon_usd": 3.30067,
+                "gallons": 29.431,
+                "cost_usd": 97.14
+              }
+            ],
+            "total_gallons_purchased": 29.431,
+            "total_gallons_consumed": 79.431,
+            "total_cost_usd": 97.14,
+            "final_fuel_gallons": 0.0
+          },
+          "metadata": {
+            "routing_cache_hit": true,
+            "candidate_stations": 3,
+            "station_coordinate_precision": "mixed; see candidate_precision_counts",
+            "candidate_precision_counts": {
+              "station_verified": 3
+            },
+            "approximate_stations_allowed": false,
+            "station_distance_basis": "routing segment annotations",
+            "route_access": "projected proximity only; station detours are not verified",
+            "cost_basis": "additional purchases only; existing starting fuel excluded",
+            "notes": "Optimal purchases for the modeled fixed route and its approximate stations; not a global road-network optimum."
+          }
+        }
+      }
+    ]
+  },
+  "two-purchases": {
+    "request": {
+      "start": "Chicago, IL",
+      "finish": "Denver, CO",
+      "vehicle": {
+        "max_range_miles": 500,
+        "mpg": 10,
+        "starting_fuel_gallons": 50
+      }
+    },
+    "runs": [
+      {
+        "run": "uncached",
+        "status": 200,
+        "latency_seconds": 4.523,
+        "response_bytes": 214278,
+        "routing_calls": 1,
+        "geocoding_calls": 0,
+        "fuel_audit": "passed: station identity, source price, stop order, range, tank capacity, fuel balance and cost",
+        "response": {
+          "map_url": "/maps/RwN4skbe4xzErOb13BXz-mtvs6hAnXH7/",
+          "route": {
+            "distance_miles": 1005.1018299270834,
+            "duration_minutes": 1068.3,
+            "geometry": {
+              "omitted_from_report": true
+            }
+          },
+          "fuel_plan": {
+            "stops": [
+              {
+                "opis_id": "67066",
+                "name": "LOVES TRAVEL STOP #361",
+                "city": "Newton",
+                "state": "IA",
+                "latitude": 41.6804245,
+                "longitude": -92.9975724,
+                "mile_marker": 296.71,
+                "coordinate_precision": "station_verified",
+                "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
+                "coordinate_provider_id": "node/947850836",
+                "arrival_fuel_gallons": 20.329,
+                "departure_fuel_gallons": 29.092,
+                "offset_miles": 0.148,
+                "price_per_gallon_usd": 3.76233,
+                "gallons": 8.763,
+                "cost_usd": 32.97
+              },
+              {
+                "opis_id": "66236",
+                "name": "LOVES TRAVEL STOP #309",
+                "city": "Aurora",
+                "state": "NE",
+                "latitude": 40.81941033956757,
+                "longitude": -97.9983575245021,
+                "mile_marker": 587.63,
+                "coordinate_precision": "station_verified",
+                "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
+                "coordinate_provider_id": "way/225056801",
+                "arrival_fuel_gallons": 0.0,
+                "departure_fuel_gallons": 41.747,
+                "offset_miles": 0.191,
+                "price_per_gallon_usd": 3.289,
+                "gallons": 41.747,
+                "cost_usd": 137.31
+              }
+            ],
+            "total_gallons_purchased": 50.51,
+            "total_gallons_consumed": 100.51,
+            "total_cost_usd": 170.28,
+            "final_fuel_gallons": 0.0
+          },
+          "metadata": {
+            "routing_cache_hit": false,
+            "candidate_stations": 3,
+            "station_coordinate_precision": "verified only",
+            "candidate_precision_counts": {
+              "station_verified": 3
+            },
+            "approximate_stations_allowed": false,
+            "station_distance_basis": "routing segment annotations",
+            "route_access": "projected proximity only; station detours are not verified",
+            "price_source": "data/fuel-prices-for-be-assessment.csv; minimum recorded price per OPIS/city/state; historical, no freshness guarantee",
+            "coordinate_attribution": "OpenStreetMap contributors, ODbL 1.0 (bundled reviewed dataset); see stop provider fields",
+            "cost_basis": "additional purchases only; existing starting fuel excluded",
+            "notes": "Optimal purchases for the modeled fixed route and its approximate stations; not a global road-network optimum."
+          }
+        }
+      },
+      {
+        "run": "cached",
+        "status": 200,
+        "latency_seconds": 0.134,
+        "response_bytes": 214277,
+        "routing_calls": 0,
+        "geocoding_calls": 0,
+        "fuel_audit": "passed: station identity, source price, stop order, range, tank capacity, fuel balance and cost",
+        "response": {
+          "map_url": "/maps/Dj61brvXv3lHRKf0vqGrpJLLuLfRsOK-/",
+          "route": {
+            "distance_miles": 1005.1018299270834,
+            "duration_minutes": 1068.3,
+            "geometry": {
+              "omitted_from_report": true
+            }
+          },
+          "fuel_plan": {
+            "stops": [
+              {
+                "opis_id": "67066",
+                "name": "LOVES TRAVEL STOP #361",
+                "city": "Newton",
+                "state": "IA",
+                "latitude": 41.6804245,
+                "longitude": -92.9975724,
+                "mile_marker": 296.71,
+                "coordinate_precision": "station_verified",
+                "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
+                "coordinate_provider_id": "node/947850836",
+                "arrival_fuel_gallons": 20.329,
+                "departure_fuel_gallons": 29.092,
+                "offset_miles": 0.148,
+                "price_per_gallon_usd": 3.76233,
+                "gallons": 8.763,
+                "cost_usd": 32.97
+              },
+              {
+                "opis_id": "66236",
+                "name": "LOVES TRAVEL STOP #309",
+                "city": "Aurora",
+                "state": "NE",
+                "latitude": 40.81941033956757,
+                "longitude": -97.9983575245021,
+                "mile_marker": 587.63,
+                "coordinate_precision": "station_verified",
+                "coordinate_provider": "OpenStreetMap contributors (ODbL 1.0)",
+                "coordinate_provider_id": "way/225056801",
+                "arrival_fuel_gallons": 0.0,
+                "departure_fuel_gallons": 41.747,
+                "offset_miles": 0.191,
+                "price_per_gallon_usd": 3.289,
+                "gallons": 41.747,
+                "cost_usd": 137.31
+              }
+            ],
+            "total_gallons_purchased": 50.51,
+            "total_gallons_consumed": 100.51,
+            "total_cost_usd": 170.28,
+            "final_fuel_gallons": 0.0
+          },
+          "metadata": {
+            "routing_cache_hit": true,
+            "candidate_stations": 3,
+            "station_coordinate_precision": "verified only",
+            "candidate_precision_counts": {
+              "station_verified": 3
+            },
+            "approximate_stations_allowed": false,
+            "station_distance_basis": "routing segment annotations",
+            "route_access": "projected proximity only; station detours are not verified",
+            "price_source": "data/fuel-prices-for-be-assessment.csv; minimum recorded price per OPIS/city/state; historical, no freshness guarantee",
+            "coordinate_attribution": "OpenStreetMap contributors, ODbL 1.0 (bundled reviewed dataset); see stop provider fields",
+            "cost_basis": "additional purchases only; existing starting fuel excluded",
+            "notes": "Optimal purchases for the modeled fixed route and its approximate stations; not a global road-network optimum."
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 # Reproducible station verification
 
-No independently verified demonstration dataset is bundled. The original CSV is the price/identity source; city centroids and historical `station_verified` labels without review evidence do not establish station-level accuracy.
+A reviewed twelve-station demonstration dataset is now bundled: see [source evidence and ODbL attribution](../data/verified_corridor/README.md). After importing prices, run `python manage.py prepare_corridor_coordinates --apply` to reproduce it offline. The generic workflow below remains available for further enrichment. City centroids and historical labels without evidence do not establish station-level accuracy.
 
 1. Create the environment, install requirements, migrate, and run `python manage.py import_stations`.
 2. Obtain an authorized local OpenStreetMap fuel POI export for the demonstration corridor (IL, MO, OK, TX, NM, AZ, CA). Preserve the source URL, download date, dataset version/hash and OpenStreetMap contributor attribution. Respect ODbL and the supplier's usage limits. This command makes no external calls and does not bulk-query Nominatim.
@@ -16,7 +16,7 @@ opis_id,city,state,address,latitude,longitude,provider,provider_id,confidence,re
 7. Dry-run `python manage.py import_station_coordinates --csv data/verified_station_coordinates.csv`, then repeat with `--apply`. Invalid rows abort the entire import. Provider attribution, confidence, evidence, reviewer and timestamp are stored in the database. Existing verified coordinates cannot be silently moved.
 8. Run `python scripts/verify_demo.py` with network access. It invokes the actual endpoint, reports HTTP status, additional fuel cost, measured latency, and routing/geocoding calls for uncached and cached requests. A 422 means demonstrated coverage is insufficient; do not substitute a precomputed success.
 
-Provider inputs, review reports and verified coordinate files are ignored by Git pending redistribution review. The pipeline is reproducible; nationwide enrichment and a validated, redistributable corridor dataset are still outstanding. A clone cannot reproduce a successful multi-stop demonstration until that dataset is independently prepared.
+Provider inputs, review reports and verified coordinate files are ignored by Git pending redistribution review. The reviewed OSM corridor subset is deliberately redistributable under ODbL with contributor attribution. A fresh clone can reproduce the demonstrated station preparation offline. Nationwide enrichment remains incomplete.
 
 # Database migration
 

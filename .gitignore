@@ -61,3 +61,6 @@ data/stations_address_candidates.csv
 /data/*review*.csv
 /data/*candidate*.csv
 /data/*poi*.geojson
+
+# Shared local routing/map cache
+.cache/

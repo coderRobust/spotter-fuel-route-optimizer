@@ -1,0 +1,134 @@
+[
+  {
+    "opis_id": "66937",
+    "store": "341",
+    "state": "MO",
+    "city": "rolla",
+    "osm_id": "way/677336597",
+    "containing_site": null,
+    "operator_url": "https://www.loves.com/locations/mo/rolla/loves-travel-stop-rolla-341",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "4227",
+    "store": "203",
+    "state": "OK",
+    "city": "oklahoma city",
+    "osm_id": "node/1923797592",
+    "containing_site": "way/226293091",
+    "operator_url": "https://www.loves.com/locations/ok/oklahoma-city/loves-travel-stop-oklahoma-city-203",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "4446",
+    "store": "200",
+    "state": "TX",
+    "city": "amarillo",
+    "osm_id": "way/221639649",
+    "containing_site": null,
+    "operator_url": "https://www.loves.com/locations/tx/amarillo/loves-travel-stop-amarillo-200",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "2922",
+    "store": "210",
+    "state": "NM",
+    "city": "albuquerque",
+    "osm_id": "node/1678893882",
+    "containing_site": null,
+    "operator_url": "https://www.loves.com/locations/nm/albuquerque/loves-travel-stop-albuquerque-210",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "66040",
+    "store": "272",
+    "state": "AZ",
+    "city": "kingman",
+    "osm_id": "way/223539583",
+    "containing_site": null,
+    "operator_url": "https://www.loves.com/locations/az/kingman/loves-travel-stop-kingman-272",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "64481",
+    "store": "282",
+    "state": "MO",
+    "city": "joplin",
+    "osm_id": "node/12249854436",
+    "containing_site": "way/226181120",
+    "operator_url": "https://www.loves.com/locations/mo/joplin/loves-travel-stop-joplin-282",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "67066",
+    "store": "361",
+    "state": "IA",
+    "city": "newton",
+    "osm_id": "node/947850836",
+    "containing_site": "way/225360873",
+    "operator_url": "https://www.loves.com/locations/ia/newton/loves-travel-stop-newton-361",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "66236",
+    "store": "309",
+    "state": "NE",
+    "city": "aurora",
+    "osm_id": "way/225056801",
+    "containing_site": "way/225056798",
+    "operator_url": "https://www.loves.com/locations/ne/aurora/loves-travel-stop-aurora-309",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "67067",
+    "store": "377",
+    "state": "CO",
+    "city": "hudson",
+    "osm_id": "node/4182375319",
+    "containing_site": null,
+    "operator_url": "https://www.loves.com/locations/co/hudson/loves-travel-stop-hudson-377",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "69142",
+    "store": "517",
+    "state": "CO",
+    "city": "grand junction",
+    "osm_id": "node/14017650084",
+    "containing_site": "way/414412486",
+    "operator_url": "https://www.loves.com/locations/co/grand-junction/loves-travel-stop-grand-junction-517",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "69291",
+    "store": "581",
+    "state": "UT",
+    "city": "salina",
+    "osm_id": "way/494917451",
+    "containing_site": null,
+    "operator_url": "https://www.loves.com/locations/ut/salina/loves-travel-stop-salina-581",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  },
+  {
+    "opis_id": "67296",
+    "store": "340",
+    "state": "NV",
+    "city": "las vegas",
+    "osm_id": "way/225364820",
+    "containing_site": null,
+    "operator_url": "https://www.loves.com/locations/nv/las-vegas/loves-travel-stop-las-vegas-340",
+    "reviewed_at": "2026-10-25T01:39:42+05:30",
+    "reviewer": "Codex independent CSV/operator/OSM source cross-check"
+  }
+]

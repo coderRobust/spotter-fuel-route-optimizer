@@ -51,8 +51,8 @@ class Command(BaseCommand):
                             raise ValueError("Missing identity/address")
                         if not (math.isfinite(lat) and math.isfinite(lon)):
                             raise ValueError("Non-finite coordinates")
-                        if not (24 <= lat <= 50 and -125 <= lon <= -66):
-                            raise ValueError("Outside configured contiguous-US bounds")
+                        if not (18 <= lat <= 72 and -180 <= lon <= -66):
+                            raise ValueError("Outside configured US bounds")
 
                         if state not in US_STATES:
                             raise ValueError("Not a US station")
@@ -95,7 +95,6 @@ class Command(BaseCommand):
                         if station.precision == "station_verified":
                             if (station.latitude, station.longitude) != (lat, lon):
                                 raise ValueError("Existing verified coordinates differ")
-                            continue
 
                         station.latitude = lat
                         station.longitude = lon

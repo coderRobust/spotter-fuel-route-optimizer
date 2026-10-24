@@ -1,10 +1,12 @@
-import hashlib,json,logging
+import hashlib,json,logging,math
 import httpx
 from django.conf import settings
 from django.core.cache import cache
 from .geography import MILES_PER_KM
 logger=logging.getLogger(__name__)
 class ProviderFailure(Exception):pass
+class PlaceNotFound(ProviderFailure):pass
+class NoDrivingRoute(ProviderFailure):pass
 CITY_PRESETS={
  'chicago, il':(41.8781,-87.6298),'los angeles, ca':(34.0522,-118.2437),
  'las vegas, nv':(36.1699,-115.1398),'denver, co':(39.7392,-104.9903),
@@ -27,32 +29,40 @@ def locate(place,coords=None):
    response=client.get(settings.GEOCODER_BASE_URL.rstrip('/')+'/search',params={'q':place+', USA','format':'json','limit':1,'countrycodes':'us'})
    response.raise_for_status()
    payload=response.json()
-  if not payload:raise ProviderFailure('US location not found')
+  if not payload:raise PlaceNotFound('US location not found')
   result=(float(payload[0]['lat']),float(payload[0]['lon']))
-  if not (24<=result[0]<=50 and -125<=result[1]<=-66):raise ProviderFailure('Only contiguous USA is supported')
+  if not (18<=result[0]<=72 and -180<=result[1]<=-66):raise PlaceNotFound('Location is outside supported US bounds')
   cache.set(key,result,604800);return result
  except httpx.HTTPError as error:raise ProviderFailure('Geocoder unavailable') from error
  except (ValueError, KeyError, TypeError, IndexError) as error:raise ProviderFailure('Malformed geocoder response') from error
 
 def get_route(start,end):
- key='route:'+hashlib.sha256(json.dumps([start,end]).encode()).hexdigest()
+ key='route:v2:'+hashlib.sha256(json.dumps([start,end]).encode()).hexdigest()
  saved=cache.get(key)
  if saved:return saved,True
  url=settings.ROUTING_BASE_URL.rstrip('/')+'/route/v1/driving/'+f'{start[1]},{start[0]};{end[1]},{end[0]}'
  try:
   with httpx.Client(timeout=18) as client:
    response=client.get(url,params={'overview':'full','geometries':'geojson','steps':'false','annotations':'distance'})
-   response.raise_for_status()
    body=response.json()
-  if body.get('code')!='Ok' or not body.get('routes'):raise ProviderFailure('No drivable route found')
+   if response.status_code in (200,400) and body.get('code') in ('NoRoute','NoSegment'):
+    raise NoDrivingRoute('No drivable route found between these endpoints')
+   response.raise_for_status()
+  if body.get('code') in ('NoRoute','NoSegment'):raise NoDrivingRoute('No drivable route found between these endpoints')
+  if body.get('code')!='Ok' or not body.get('routes'):raise ProviderFailure('Malformed routing provider response')
   route=body['routes'][0]
-  result={'distance_miles':round(route['distance']/1000*MILES_PER_KM,2),
+  if not all(isinstance(route.get(k), (int,float)) and math.isfinite(route[k]) and route[k]>=0 for k in ('distance','duration')):
+   raise ProviderFailure('Invalid routing distance or duration')
+  result={'distance_miles':route['distance']/1000*MILES_PER_KM,
    'duration_minutes':round(route['duration']/60,1),'geometry':route['geometry']}
   if result['geometry'].get('type')!='LineString':raise ProviderFailure('Unsupported route geometry')
+  points=result['geometry'].get('coordinates',[])
+  if len(points)<2 or any(len(p)!=2 or not all(isinstance(x,(int,float)) and math.isfinite(x) for x in p) or not(-180<=p[0]<=180 and -90<=p[1]<=90) for p in points):
+   raise ProviderFailure('Invalid route coordinates')
   segments=[d / 1000 * MILES_PER_KM for leg in route.get('legs', []) for d in leg.get('annotation', {}).get('distance', [])]
-  if len(segments)==len(result['geometry']['coordinates'])-1:
+  if len(segments)==len(points)-1 and all(math.isfinite(d) and d>=0 for d in segments) and abs(sum(segments)-result['distance_miles'])<.01:
    result['segment_miles']=segments
   cache.set(key,result,settings.ROUTE_CACHE_SECONDS)
   return result,False
  except httpx.HTTPError as error:raise ProviderFailure('Routing provider unavailable') from error
- except (ValueError,KeyError,TypeError) as error:raise ProviderFailure('Malformed routing provider response') from error
+ except (ValueError,KeyError,TypeError,IndexError,AttributeError) as error:raise ProviderFailure('Malformed routing provider response') from error

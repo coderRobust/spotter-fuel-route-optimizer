@@ -47,6 +47,8 @@ def optimize_fuel_stops(stations,distance_miles,max_range=500,mpg=10,starting_fu
    expense=purchased*node['price'];cost+=expense;fuel+=purchased;bought+=purchased
    stops.append({'opis_id':node.get('opis_id'),'name':node.get('name'),'city':node.get('city'),'state':node.get('state'),
     'latitude':node.get('latitude'),'longitude':node.get('longitude'),'mile_marker':round(float(node['route_mile']),2),
+    'coordinate_precision':node.get('precision'),'coordinate_provider':node.get('coordinate_provider'),'coordinate_provider_id':node.get('coordinate_provider_id'),
+    'arrival_fuel_gallons':round(float(fuel-purchased),3),'departure_fuel_gallons':round(float(fuel),3),
     'offset_miles':node.get('offset_miles'), 'price_per_gallon_usd':float(node['price']),
     'gallons':float(purchased.quantize(Decimal('0.001'),rounding=ROUND_HALF_UP)),
     'cost_usd':float(expense.quantize(Decimal('0.01'),rounding=ROUND_HALF_UP))})

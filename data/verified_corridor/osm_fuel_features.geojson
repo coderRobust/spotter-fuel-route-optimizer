@@ -1,0 +1,708 @@
+{
+  "type": "FeatureCollection",
+  "attribution": "OpenStreetMap contributors",
+  "license": "ODbL 1.0 https://opendatacommons.org/licenses/odbl/1-0/",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "way/677336597",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -91.7187695,
+              37.9820225
+            ],
+            [
+              -91.7192057,
+              37.9817519
+            ],
+            [
+              -91.7191564,
+              37.9816996
+            ],
+            [
+              -91.7187107,
+              37.9819642
+            ],
+            [
+              -91.7187695,
+              37.9820225
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "addr:city": "Rolla",
+        "addr:housenumber": "3500",
+        "addr:postcode": "65401",
+        "addr:state": "MO",
+        "addr:street": "Hy Point Industrial Park Drive",
+        "amenity": "fuel",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "building": "roof",
+        "hgv": "yes",
+        "name": "Love's",
+        "opening_hours": "24/7",
+        "website": "https://www.loves.com/locations/341",
+        "osm_version": "6",
+        "osm_timestamp": "2024-10-18T06:37:17Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1923797592",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.6883778,
+          35.4577271
+        ]
+      },
+      "properties": {
+        "amenity": "fuel",
+        "hgv": "yes",
+        "osm_version": "3",
+        "osm_timestamp": "2024-10-13T17:42:17Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/226293091",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -97.6889519,
+              35.4573798
+            ],
+            [
+              -97.6879916,
+              35.4573929
+            ],
+            [
+              -97.6877422,
+              35.4575939
+            ],
+            [
+              -97.6877309,
+              35.4585588
+            ],
+            [
+              -97.6881499,
+              35.4587475
+            ],
+            [
+              -97.6881552,
+              35.4582166
+            ],
+            [
+              -97.6889553,
+              35.458214
+            ],
+            [
+              -97.6889519,
+              35.4573798
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "branch": "Oklahoma City",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "hgv": "yes",
+        "highway": "services",
+        "name": "Love's Travel Stop",
+        "phone": "+1 405-789-0087",
+        "ref": "203",
+        "website": "https://www.loves.com/locations/ok/oklahoma-city/loves-travel-stop-oklahoma-city-203",
+        "osm_version": "6",
+        "osm_timestamp": "2026-07-16T22:28:20Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/221639649",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -101.7608484,
+              35.1914058
+            ],
+            [
+              -101.7609006,
+              35.1915554
+            ],
+            [
+              -101.7609637,
+              35.1917325
+            ],
+            [
+              -101.7609637,
+              35.1917982
+            ],
+            [
+              -101.7608377,
+              35.1917916
+            ],
+            [
+              -101.760843,
+              35.1917303
+            ],
+            [
+              -101.7607789,
+              35.1915535
+            ],
+            [
+              -101.760725,
+              35.1913993
+            ],
+            [
+              -101.7608484,
+              35.1914058
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "addr:city": "Amarillo",
+        "addr:state": "TX",
+        "amenity": "fuel",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "building": "roof",
+        "hgv": "yes",
+        "name": "Love's",
+        "osm_version": "5",
+        "osm_timestamp": "2024-10-13T18:50:15Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/1678893882",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.648925,
+          35.1076843
+        ]
+      },
+      "properties": {
+        "addr:housenumber": "2200",
+        "addr:street": "6th Street Northwest",
+        "amenity": "fuel",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "hgv": "yes",
+        "name": "Love's",
+        "opening_hours": "24/7",
+        "self_service": "yes",
+        "osm_version": "8",
+        "osm_timestamp": "2025-06-02T09:32:02Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/223539583",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -113.903952,
+              35.1993628
+            ],
+            [
+              -113.9039515,
+              35.1994131
+            ],
+            [
+              -113.9039471,
+              35.1998565
+            ],
+            [
+              -113.9040241,
+              35.1998571
+            ],
+            [
+              -113.9040285,
+              35.1994126
+            ],
+            [
+              -113.904029,
+              35.1993633
+            ],
+            [
+              -113.903952,
+              35.1993628
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "addr:city": "Kingman",
+        "addr:housenumber": "6035",
+        "addr:postcode": "86401",
+        "addr:state": "AZ",
+        "addr:street": "East Minerva Lane",
+        "amenity": "fuel",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "building": "roof",
+        "fuel:diesel": "yes",
+        "hgv": "yes",
+        "large_vehicles": "yes",
+        "name": "Love's Truck Lanes",
+        "opening_hours": "24/7",
+        "phone": "+1-928-681-4405",
+        "website": "https://www.loves.com/locations/272",
+        "osm_version": "5",
+        "osm_timestamp": "2025-01-31T10:07:35Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/12249854436",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.5437278,
+          37.0131925
+        ]
+      },
+      "properties": {
+        "amenity": "fuel",
+        "hgv": "yes",
+        "osm_version": "1",
+        "osm_timestamp": "2024-10-14T06:59:06Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/226181120",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -94.5446331,
+              37.0140031
+            ],
+            [
+              -94.5453759,
+              37.0126137
+            ],
+            [
+              -94.5448048,
+              37.0124761
+            ],
+            [
+              -94.5440645,
+              37.012474
+            ],
+            [
+              -94.5434394,
+              37.0125773
+            ],
+            [
+              -94.5431043,
+              37.0136754
+            ],
+            [
+              -94.5446331,
+              37.0140031
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "branch": "Joplin",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "hgv": "yes",
+        "highway": "services",
+        "name": "Love's Travel Stop",
+        "phone": "+1 417-206-0684",
+        "ref": "282",
+        "website": "https://www.loves.com/locations/mo/joplin/loves-travel-stop-joplin-282",
+        "osm_version": "3",
+        "osm_timestamp": "2026-07-16T22:28:20Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/947850836",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.9975724,
+          41.6804245
+        ]
+      },
+      "properties": {
+        "amenity": "fuel",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "fuel:diesel": "yes",
+        "hgv": "yes",
+        "name": "Love's",
+        "osm_version": "10",
+        "osm_timestamp": "2024-10-14T18:25:14Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/225360873",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -92.9964754,
+              41.6797023
+            ],
+            [
+              -92.9995331,
+              41.6797167
+            ],
+            [
+              -92.9995538,
+              41.6807848
+            ],
+            [
+              -92.9992292,
+              41.6810144
+            ],
+            [
+              -92.9961769,
+              41.6816212
+            ],
+            [
+              -92.9961664,
+              41.6797626
+            ],
+            [
+              -92.9964754,
+              41.6797023
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "branch": "Newton",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "hgv": "yes",
+        "highway": "services",
+        "name": "Love's Travel Stop",
+        "phone": "+1 641-791-2410",
+        "ref": "361",
+        "website": "https://www.loves.com/locations/ia/newton/loves-travel-stop-newton-361",
+        "osm_version": "5",
+        "osm_timestamp": "2026-07-16T22:28:20Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/225056801",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -97.998406,
+              40.819193
+            ],
+            [
+              -97.9983144,
+              40.8191924
+            ],
+            [
+              -97.998309,
+              40.8196276
+            ],
+            [
+              -97.9984007,
+              40.8196282
+            ],
+            [
+              -97.998406,
+              40.819193
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "amenity": "fuel",
+        "building": "roof",
+        "fuel:diesel": "yes",
+        "hgv": "designated",
+        "osm_version": "4",
+        "osm_timestamp": "2026-01-11T23:46:33Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/225056798",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -97.9974924,
+              40.818322
+            ],
+            [
+              -97.9995185,
+              40.8183348
+            ],
+            [
+              -97.9994845,
+              40.8203069
+            ],
+            [
+              -97.9974689,
+              40.8202957
+            ],
+            [
+              -97.9974924,
+              40.818322
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "branch": "Aurora",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "hgv": "yes",
+        "highway": "services",
+        "name": "Love's Travel Stop",
+        "phone": "+1 402-694-2802",
+        "ref": "309",
+        "website": "https://www.loves.com/locations/ne/aurora/loves-travel-stop-aurora-309",
+        "osm_version": "3",
+        "osm_timestamp": "2026-07-16T22:28:20Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/4182375319",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.648352,
+          40.0778674
+        ]
+      },
+      "properties": {
+        "addr:city": "Hudson",
+        "addr:housenumber": "201",
+        "addr:postcode": "80642",
+        "addr:state": "CO",
+        "addr:street": "East Bison Highway",
+        "amenity": "fuel",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "fax": "+1-303-536-9904",
+        "hgv": "yes",
+        "name": "Love's (Trucks)",
+        "operator": "Love's",
+        "phone": "+1-303-536-9900",
+        "website": "https://www.loves.com",
+        "osm_version": "6",
+        "osm_timestamp": "2024-10-16T19:18:44Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "node/14017650084",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.6453317,
+          39.1141666
+        ]
+      },
+      "properties": {
+        "amenity": "fuel",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "hgv": "designated",
+        "name": "Love's",
+        "self_service": "yes",
+        "osm_version": "1",
+        "osm_timestamp": "2026-07-15T13:43:50Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/414412486",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -108.6453581,
+              39.1152655
+            ],
+            [
+              -108.644827,
+              39.1152821
+            ],
+            [
+              -108.6441025,
+              39.1152835
+            ],
+            [
+              -108.6440972,
+              39.1136769
+            ],
+            [
+              -108.6448217,
+              39.1136755
+            ],
+            [
+              -108.6476487,
+              39.1136131
+            ],
+            [
+              -108.6476326,
+              39.113892
+            ],
+            [
+              -108.6453581,
+              39.1152655
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "hgv": "yes",
+        "highway": "services",
+        "name": "Love's Travel Stop",
+        "phone": "+1 970-241-3337",
+        "ref": "517",
+        "website": "https://www.loves.com/locations/co/grand-junction/loves-travel-stop-grand-junction-517",
+        "osm_version": "5",
+        "osm_timestamp": "2026-07-16T22:28:20Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/494917451",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -111.8539715,
+              38.9321133
+            ],
+            [
+              -111.8538277,
+              38.9321143
+            ],
+            [
+              -111.8538229,
+              38.9318267
+            ],
+            [
+              -111.8539652,
+              38.9318215
+            ],
+            [
+              -111.8539715,
+              38.9321133
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "addr:city": "Salina",
+        "addr:housenumber": "1915",
+        "addr:postcode": "84654",
+        "addr:state": "UT",
+        "addr:street": "South State Street",
+        "amenity": "fuel",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "building": "roof",
+        "compressed_air": "yes",
+        "fuel:diesel": "yes",
+        "fuel:gasoline": "yes",
+        "hgv": "no",
+        "large_vehicles": "yes",
+        "layer": "1",
+        "name": "Love's",
+        "opening_hours": "24/7",
+        "operator": "Love's",
+        "phone": "+1-435-287-0460",
+        "ref:US:UT:DEQ:DERRID": "2000749",
+        "osm_version": "6",
+        "osm_timestamp": "2024-10-16T19:09:08Z"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "way/225364820",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -114.8965576,
+              36.3808883
+            ],
+            [
+              -114.8963136,
+              36.3812943
+            ],
+            [
+              -114.8963946,
+              36.3813245
+            ],
+            [
+              -114.8964276,
+              36.3812694
+            ],
+            [
+              -114.8966386,
+              36.380925
+            ],
+            [
+              -114.8965576,
+              36.3808883
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "addr:city": "Las Vegas",
+        "addr:housenumber": "12501",
+        "addr:postcode": "89165",
+        "addr:state": "NV",
+        "addr:street": "Apex Great Basin Way",
+        "amenity": "fuel",
+        "brand": "Love's",
+        "brand:wikidata": "Q1872496",
+        "building": "roof",
+        "fuel:diesel": "yes",
+        "fuel:gasoline": "no",
+        "large_vehicles": "yes",
+        "layer": "1",
+        "name": "Love's Truck Lanes",
+        "osm_version": "8",
+        "osm_timestamp": "2026-05-26T09:11:52Z"
+      }
+    }
+  ]
+}

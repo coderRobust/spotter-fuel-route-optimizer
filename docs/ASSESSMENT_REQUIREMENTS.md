@@ -1,13 +1,16 @@
-# Assessment requirement traceability
-| Requirement | Implementation | Limitations |
+# Employer requirement traceability
+
+| Requirement | Evidence | Remaining boundary |
 | --- | --- | --- |
-| Latest stable Django | Django 6.1.2 pin | Python 3.12+ required |
-| US start and finish | DRF POST with place strings or coordinates | Bounding box not complete geographical validation |
-| Driving route and map | OSRM GeoJSON LineString | No rendered HTML map; API consumer can display GeoJSON |
-| Lowest-cost fuel stops | Fixed-route greedy optimized purchase quantities | City-centroid and zero-detour approximation |
-| 500 mile max / 10 MPG | Defaults in serializer and optimizer | Starting fuel assumed full unless provided |
-| USD fuel price | Original CSV imported | Duplicate prices resolved by choosing minimum |
-| Fast API and routing calls | One OSRM route call, bounded cache | Geocoding call possible, cold latency not benchmarked |
-| GitHub source | Included ZIP to initialize personal GitHub repo | Not uploaded |
-| Loom <=5 minutes | Recording script | Not recorded |
-| Submission in three days | README and project files | User must submit |
+| Latest stable Django | Django 6.1.2; official download page checked 25 October 2026 | Verify again if submitting substantially later |
+| US start/finish | Place names or coordinates, bounds including AK/HI; invalid inputs rejected | Bounds alone do not establish jurisdiction; disconnected roads return 422 |
+| Route/map and stops | OSRM GeoJSON plus rendered `map_url`; headless Chrome rendering checked | Map uses external Leaflet assets and OSM tiles; private cache tokens expire |
+| Cost-effective CSV stations | Decimal greedy optimizer; independent exhaustive oracle comparisons; 12 source-reviewed station identities | Optimal only among available fixed-route candidates, zero access detour; incomplete nationwide coverage |
+| 500 miles / 10 MPG | Default model; exact range, empty tank, multiple-purchase tests and real response fuel audits | Initial tank defaults full; its existing cost is excluded explicitly |
+| Multiple fuel stops and total cost | Real Chicago–Los Angeles: 2,018.04 miles, 5 purchases, $532.23 | Historical prices, no freshness guarantee |
+| Fast response / few provider calls | Cold/warm measurements, 1/0 routing calls; presets require no geocoding | Up to 2 additional calls for uncached endpoint geocoding; map tile calls are separate |
+| Reproducible GitHub source | Migrations, original price CSV, ODbL-reviewed POI subset, CI clean preparation/test steps | Public routing service must be available for live demo |
+| <=5-minute Loom | Existing recording outline and runnable Postman collection | User still needs to record/upload a genuine Loom; excluded from technical scope |
+| Submit within 3 days | Repository and validation report ready for review | Receipt date unknown; user must submit links on time |
+
+See [execution evidence and exact remaining limitations](ASSESSMENT_VALIDATION.md).

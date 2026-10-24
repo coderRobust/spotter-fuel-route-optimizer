@@ -90,7 +90,7 @@ class LongRouteApiTests(TestCase):
         route_mock.return_value = ({'distance_miles': 2000, 'duration_minutes': 2000,
                                     'geometry': {'type': 'LineString', 'coordinates': [[-90, 35], [-95, 35], [-100, 35], [-105, 35], [-110, 35]]}}, False)
         for n, lon in enumerate([-95, -100, -105]):
-            Station.objects.create(opis_id=str(n), name='Synthetic test fixture', city='Test', state='NM', price=3,
+            Station.objects.create(opis_id=str(n), name='Synthetic test fixture', precision='station_verified', coordinate_evidence='Synthetic verified fixture', city='Test', state='NM', price=3,
                                    latitude=35, longitude=lon)
         payload = {'start_coordinates': {'lat': 35, 'lon': -90}, 'finish_coordinates': {'lat': 35, 'lon': -110}}
         response = APIClient().post('/api/v1/routes/optimize/', payload, format='json')
@@ -154,3 +154,91 @@ class PriceImportTests(TestCase):
             call_command('import_stations', csv=str(path))
         self.assertEqual(Station.objects.count(), 1)
         self.assertEqual(float(Station.objects.get().price), 3.25)
+
+
+class FinalAcceptanceTests(TestCase):
+    def test_bundled_station_preparation_is_reproducible(self):
+        call_command('import_stations')
+        with tempfile.TemporaryDirectory() as directory:
+            output = str(Path(directory) / 'verified.csv')
+            call_command('prepare_corridor_coordinates', output=output, apply=True)
+            self.assertEqual(Station.objects.exclude(coordinate_evidence='').count(), 12)
+            call_command('prepare_corridor_coordinates', output=output, apply=True)
+            self.assertEqual(Station.objects.exclude(coordinate_evidence='').count(), 12)
+
+    @patch('planner.views.get_route')
+    def test_map_and_verified_only_policy(self, route_mock):
+        from django.core.cache import cache
+        route_mock.return_value = ({'distance_miles': 700, 'geometry': {'type': 'LineString', 'coordinates': [[-100, 35], [-105, 35], [-110, 35]]}}, False)
+        station = Station.objects.create(opis_id='s', name='</script><script>alert(1)</script>', city='Test', state='NM',
+                                         price=3, latitude=35, longitude=-105, precision='city_centroid')
+        payload = {'start': 'Chicago, IL', 'finish': 'Los Angeles, CA'}
+        client = APIClient()
+        self.assertEqual(client.post('/api/v1/routes/optimize/', payload, format='json').status_code, 422)
+        station.precision = 'station_verified'
+        station.coordinate_evidence = 'Synthetic verified fixture'
+        station.save()
+        response = client.post('/api/v1/routes/optimize/', payload, format='json')
+        self.assertEqual(response.status_code, 200, response.data)
+        map_response = client.get(response.data['map_url'])
+        self.assertEqual(map_response.status_code, 200)
+        self.assertNotIn(b'</script><script>alert(1)</script>', map_response.content)
+        self.assertIn(b'route-data', map_response.content)
+        cache.clear()
+        self.assertEqual(client.get(response.data['map_url']).status_code, 404)
+
+    def test_nonfinite_vehicle_and_coordinates_rejected(self):
+        from planner.serializers import OptimizeSerializer
+        for value in ('NaN', 'Infinity', '-Infinity'):
+            serializer = OptimizeSerializer(data={'start': 'Chicago, IL', 'finish': 'Los Angeles, CA', 'vehicle': {'mpg': value}})
+            self.assertFalse(serializer.is_valid())
+            serializer = OptimizeSerializer(data={'start_coordinates': {'lat': value, 'lon': -100}, 'finish': 'Los Angeles, CA'})
+            self.assertFalse(serializer.is_valid())
+
+    @patch('planner.services.httpx.Client')
+    def test_provider_no_route_differs_from_outage(self, client):
+        from django.core.cache import cache
+        from planner.services import get_route, NoDrivingRoute
+        cache.clear()
+        client.return_value.__enter__.return_value.get.return_value.json.return_value = {'code': 'NoRoute'}
+        with self.assertRaises(NoDrivingRoute):
+            get_route((21.3, -157.8), (34, -118))
+
+    def test_greedy_cost_matches_independent_discrete_oracle(self):
+        # Integer gallons and 10-mile positions let exhaustive state DP solve the
+        # same continuous problem exactly at integral breakpoints.
+        import random
+        randomizer = random.Random(2026)
+        for _ in range(20):
+            prices = [randomizer.randint(2, 6) for _ in range(7)]
+            miles = [0, 30, 70, 100, 140, 180, 210]
+            tank = 5
+            fuel_cost = {2: 0}
+            for i, mile in enumerate(miles[:-1]):
+                future = {}
+                gallons_to_next = (miles[i + 1] - mile) // 10
+                for remaining, cost in fuel_cost.items():
+                    for buy in range(tank - remaining + 1):
+                        arrival = remaining + buy - gallons_to_next
+                        if arrival >= 0:
+                            future[arrival] = min(future.get(arrival, float('inf')), cost + buy * prices[i])
+                fuel_cost = future
+            stations = [{'route_mile': p, 'price': price} for p, price in zip(miles[:-1], prices)]
+            result = optimize_fuel_stops(stations, miles[-1], max_range=50, mpg=10, starting_fuel=2)
+            self.assertEqual(result['total_cost_usd'], min(fuel_cost.values()))
+
+    def test_alaska_hawaii_endpoints_validate(self):
+        from planner.serializers import OptimizeSerializer
+        serializer = OptimizeSerializer(data={'start_coordinates': {'lat': 61.2, 'lon': -149.9},
+                                               'finish_coordinates': {'lat': 21.3, 'lon': -157.8}})
+        self.assertTrue(serializer.is_valid(), serializer.errors)
+
+    @patch('planner.services.httpx.Client')
+    def test_provider_empty_geometry_rejected(self, client):
+        from django.core.cache import cache
+        from planner.services import get_route, ProviderFailure
+        cache.clear()
+        client.return_value.__enter__.return_value.get.return_value.json.return_value = {
+            'code': 'Ok', 'routes': [{'distance': 1000, 'duration': 100, 'geometry': {'type': 'LineString', 'coordinates': []}}]}
+        with self.assertRaises(ProviderFailure):
+            get_route((35, -100), (35, -101))
