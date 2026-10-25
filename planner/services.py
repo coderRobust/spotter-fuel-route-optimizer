@@ -1,4 +1,4 @@
-import hashlib,json,logging,math
+import hashlib,json,logging,math,re
 import httpx
 from django.conf import settings
 from django.core.cache import cache
@@ -6,7 +6,19 @@ from .geography import MILES_PER_KM
 logger=logging.getLogger(__name__)
 class ProviderFailure(Exception):pass
 class PlaceNotFound(ProviderFailure):pass
-class NoDrivingRoute(ProviderFailure):pass
+class NoDrivingRoute(ProviderFailure):
+ def __init__(self, message, *, provider_code=None, waypoint_index=None):
+  super().__init__(message)
+  self.provider_code=provider_code
+  self.waypoint_index=waypoint_index
+  self.diagnostics={}
+
+def no_route_error(body, point_count):
+ message=body.get('message') or 'No drivable route found between these endpoints'
+ match=re.search(r'coordinate (\d+)\b', message)
+ index=int(match.group(1)) if match else None
+ if index is not None and not 0<=index<point_count:index=None
+ return NoDrivingRoute(message,provider_code=body.get('code'),waypoint_index=index)
 CITY_PRESETS={
  'chicago, il':(41.8781,-87.6298),'los angeles, ca':(34.0522,-118.2437),
  'las vegas, nv':(36.1699,-115.1398),'denver, co':(39.7392,-104.9903),
@@ -37,22 +49,24 @@ def locate(place,coords=None):
  except (ValueError, KeyError, TypeError, IndexError) as error:raise ProviderFailure('Malformed geocoder response') from error
 
 def get_route(start,end,via=None):
- key='route:v3:'+hashlib.sha256(json.dumps([settings.ROUTING_BASE_URL,start,end,via]).encode()).hexdigest()
+ key='route:v4:'+hashlib.sha256(json.dumps([settings.ROUTING_BASE_URL,start,end,via]).encode()).hexdigest()
  saved=cache.get(key)
  if saved:return saved,True
  points=[start,*(via or []),end]
  url=settings.ROUTING_BASE_URL.rstrip('/')+'/route/v1/driving/'+';'.join(f'{p[1]},{p[0]}' for p in points)
  params={'overview':'full','geometries':'geojson','steps':'false','annotations':'distance'}
  if via:
-  params.update(radiuses=';'.join(['75']*len(points)),snapping='any',continue_straight='false')
+  # Place-name endpoints can be city centroids away from a road. Only fuel
+  # coordinates require the strict access snap; retain OSRM's endpoint policy.
+  params.update(radiuses=';'.join(['unlimited',*(['75']*len(via)),'unlimited']),snapping='any',continue_straight='false')
  try:
   with httpx.Client(timeout=18) as client:
    response=client.get(url,params=params)
    body=response.json()
    if response.status_code in (200,400) and body.get('code') in ('NoRoute','NoSegment'):
-    raise NoDrivingRoute('No drivable route found between these endpoints')
+    raise no_route_error(body,len(points))
    response.raise_for_status()
-  if body.get('code') in ('NoRoute','NoSegment'):raise NoDrivingRoute('No drivable route found between these endpoints')
+  if body.get('code') in ('NoRoute','NoSegment'):raise no_route_error(body,len(points))
   if body.get('code')!='Ok' or not body.get('routes'):raise ProviderFailure('Malformed routing provider response')
   route=body['routes'][0]
   if not all(isinstance(route.get(k), (int,float)) and math.isfinite(route[k]) and route[k]>=0 for k in ('distance','duration')):
@@ -69,7 +83,7 @@ def get_route(start,end,via=None):
   if via:
    legs=[leg['distance']/1000*MILES_PER_KM for leg in route['legs']]
    snaps=[waypoint['distance'] for waypoint in body['waypoints']]
-   if len(legs)!=len(via)+1 or len(snaps)!=len(via)+2 or any(not math.isfinite(d) or d<0 for d in legs+snaps) or max(snaps)>75 or abs(sum(legs)-result['distance_miles'])>.001:
+   if len(legs)!=len(via)+1 or len(snaps)!=len(via)+2 or any(not math.isfinite(d) or d<0 for d in legs+snaps) or any(d>75 for d in snaps[1:-1]) or abs(sum(legs)-result['distance_miles'])>.001:
     raise ProviderFailure('Invalid station-access route distances or snaps')
    result['leg_distances_miles']=legs
    result['waypoint_snap_distances_meters']=snaps

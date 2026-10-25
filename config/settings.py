@@ -41,3 +41,5 @@ ROUTING_BASE_URL=os.environ.get('ROUTING_BASE_URL','https://router.project-osrm.
 GEOCODER_BASE_URL=os.environ.get('GEOCODER_BASE_URL','https://nominatim.openstreetmap.org')
 GEOCODER_USER_AGENT=os.environ.get('GEOCODER_USER_AGENT','spotter-route-assessment/1.0 (contact: change-me@example.com)')
 ROUTE_CACHE_SECONDS=int(os.environ.get('ROUTE_CACHE_SECONDS','1800'))
+
+BASEMAP_STYLE_URL=os.environ.get('BASEMAP_STYLE_URL','https://tiles.openfreemap.org/styles/liberty')

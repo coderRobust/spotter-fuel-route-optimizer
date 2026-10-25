@@ -16,4 +16,7 @@ def route_map(request, token):
     result = cache.get('map:' + token)
     if result is None:
         raise Http404('Map expired; submit the route request again.')
-    return render(request, 'planner/route_map.html', {'result': result})
+    response = render(request, 'planner/route_map.html', {'result': result, 'basemap_config': {'style_url': settings.BASEMAP_STYLE_URL}})
+    # Send the actual page origin, without exposing the private map token path.
+    response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
+    return response

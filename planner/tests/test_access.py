@@ -70,3 +70,52 @@ class RoadAccessTests(TestCase):
         client.return_value.__enter__.return_value.get.return_value.json.return_value = body
         with self.assertRaises(ProviderFailure):
             get_route((35, -100), (35, -102), via=[(35, -101)])
+
+    @patch('planner.services.httpx.Client')
+    def test_city_center_endpoint_beyond_station_radius_is_allowed(self, client):
+        from django.core.cache import cache
+        from planner.services import get_route
+        cache.clear()
+        # Denver's city-center endpoint is 81.5m from its road snap. The fuel
+        # stop remains only 20m from its service road; the 75m limit applies there.
+        provider = client.return_value.__enter__.return_value.get
+        provider.return_value.status_code = 200
+        provider.return_value.json.return_value = {'code': 'Ok', 'routes': [{
+            'distance': 2000, 'duration': 200,
+            'geometry': {'type': 'LineString', 'coordinates': [[-100, 35], [-101, 35], [-102, 35]]},
+            'legs': [{'distance': 1000}, {'distance': 1000}]}],
+            'waypoints': [{'distance': 0}, {'distance': 20}, {'distance': 81.49919765}]}
+        route, _ = get_route((35, -100), (35, -102), via=[(35, -101)])
+        self.assertEqual(provider.call_args.kwargs['params']['radiuses'], 'unlimited;75;unlimited')
+        self.assertGreater(route['waypoint_snap_distances_meters'][-1], 75)
+        self.assertLess(route['waypoint_snap_distances_meters'][1], 75)
+
+    @patch('planner.services.httpx.Client')
+    def test_no_segment_retains_provider_code_and_waypoint_index(self, client):
+        from django.core.cache import cache
+        from planner.services import get_route, NoDrivingRoute
+        cache.clear()
+        provider = client.return_value.__enter__.return_value.get
+        provider.return_value.status_code = 400
+        provider.return_value.json.return_value = {'code': 'NoSegment', 'message': 'Could not find a matching segment for coordinate 1'}
+        with self.assertRaises(NoDrivingRoute) as caught:
+            get_route((35, -100), (35, -102), via=[(35, -101)])
+        self.assertEqual(caught.exception.provider_code, 'NoSegment')
+        self.assertEqual(caught.exception.waypoint_index, 1)
+
+    @patch('planner.access.get_route')
+    @patch('planner.views.get_route')
+    def test_inaccessible_fuel_stop_keeps_422_with_identity_diagnostics(self, base, access):
+        from planner.services import NoDrivingRoute
+        base.return_value = ({'distance_miles': 1200, 'geometry': self.access_route['geometry']}, False)
+        access.side_effect = NoDrivingRoute('Could not find a matching segment for coordinate 1', provider_code='NoSegment', waypoint_index=1)
+        for candidate in self.candidates:
+            Station.objects.create(**{k: v for k, v in candidate.items() if k != 'route_mile'}, precision='station_verified', coordinate_evidence='Synthetic verified fixture')
+        response = APIClient().post('/api/v1/routes/optimize/', {
+            'start_coordinates': {'lat': 35, 'lon': -100}, 'finish_coordinates': {'lat': 35, 'lon': -112}}, format='json')
+        self.assertEqual(response.status_code, 422)
+        diagnostics = response.data['diagnostics']
+        self.assertEqual(diagnostics['provider_code'], 'NoSegment')
+        self.assertEqual(diagnostics['failed_waypoint']['role'], 'fuel_stop')
+        self.assertEqual(diagnostics['failed_waypoint']['opis_id'], '1')
+        self.assertEqual(diagnostics['failed_waypoint']['snap_radius_meters'], 75)

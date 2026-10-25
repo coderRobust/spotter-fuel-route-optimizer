@@ -1,18 +1,76 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FuelRoute • Route and fuel stops</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-<style>body{margin:0;font:16px system-ui;color:#152a35;background:#f3f6f8}header,aside{padding:20px}header{background:#152a35;color:white}h1{margin:0;font-size:24px}main{display:grid;grid-template-columns:1fr 340px}#map{height:76vh;min-height:420px}aside{overflow:auto;max-height:72vh}li{margin:0 0 18px}small{display:block;line-height:1.5;color:#52636e}header p{margin-bottom:0}@media(max-width:760px){main{display:block}#map{height:55vh}aside{max-height:none}}</style></head>
-<body><header><h1>FuelRoute</h1><p id="summary"></p></header><main><div id="map" aria-label="Driving route with fuel stops"></div><aside><h2>Fuel purchases</h2><ol id="stops"></ol><small>Historical CSV prices. Starting fuel is excluded from additional purchase cost. {% if result.fuel_plan.road_access_verified %}The route passes through the selected fuel coordinates. Access-road fuel is included; road snapping is limited to 75 meters. Road profile: car.{% else %}Stops are projected onto the route; access-road detours and their fuel are not modeled.{% endif %} Tiles © OpenStreetMap contributors.</small></aside></main>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FuelRoute • Route and fuel stops</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.16.0/dist/maplibre-gl.css">
+<style>
+body{margin:0;font:16px system-ui;color:#152a35;background:#f3f6f8}header,aside{padding:20px}header{background:#152a35;color:white}h1{margin:0;font-size:24px}main{display:grid;grid-template-columns:1fr 340px}#map{height:76vh;min-height:420px}aside{overflow:auto;max-height:72vh}li{margin:0 0 18px}small{display:block;line-height:1.5;color:#52636e}header p{margin-bottom:0}#map-status{margin:0;padding:12px;background:#fff0c2}a{color:inherit}@media(max-width:760px){main{display:block}#map{height:55vh}aside{max-height:none}}
+</style>
+</head>
+<body>
+<header><h1>FuelRoute</h1><p id="summary"></p></header>
+<p id="map-status" role="status" hidden>Background map unavailable. The route and fuel purchase details remain available.</p>
+<main>
+<div id="map" aria-label="Driving route with fuel stops" aria-busy="true"></div>
+<aside><h2>Fuel purchases</h2><ol id="stops"></ol>
+<small>Historical CSV prices. Starting fuel is excluded from additional purchase cost.
+{% if result.fuel_plan.road_access_verified %}The route passes through the selected fuel coordinates. Access-road fuel is included; fuel-stop road snapping is limited to 75 meters. Road profile: car.{% else %}Stops are projected onto the route; access-road detours and their fuel are not modeled.{% endif %}
+Basemap: <a href="https://openfreemap.org/">OpenFreeMap</a>, <a href="https://openmaptiles.org/">OpenMapTiles</a>, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.</small>
+</aside>
+</main>
 {{ result|json_script:"route-data" }}
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script>
-const data=JSON.parse(document.getElementById('route-data').textContent),plan=data.fuel_plan;
-document.getElementById('summary').textContent=`${data.route.distance_miles.toFixed(2)} miles · ${plan.stops.length} purchases · $${plan.total_cost_usd.toFixed(2)} additional fuel`;
-const map=L.map('map');L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'}).addTo(map);
-const line=L.geoJSON(data.route.geometry,{style:{color:'#147e9c',weight:5}}).addTo(map);map.fitBounds(line.getBounds(),{padding:[24,24]});
-const coordinates=data.route.geometry.coordinates;
-for(const [label,p] of [['Start',coordinates[0]],['Finish',coordinates[coordinates.length-1]]])L.marker([p[1],p[0]]).addTo(map).bindPopup(label);
-plan.stops.forEach((s,i)=>{const text=`${s.name} — ${s.city}, ${s.state}: ${s.gallons.toFixed(3)} gal × $${s.price_per_gallon_usd.toFixed(5)} = $${s.cost_usd.toFixed(2)} at mile ${s.mile_marker}`;
-const li=document.createElement('li');li.textContent=text;document.getElementById('stops').appendChild(li);
-const popup=document.createElement('span');popup.textContent=`${i+1}. ${text}`;L.marker([s.latitude,s.longitude]).addTo(map).bindPopup(popup);});
-</script></body></html>
+{{ basemap_config|json_script:"basemap-config" }}
+<script type="module">
+import * as maplibregl from 'https://unpkg.com/maplibre-gl@6.16.0/dist/maplibre-gl.mjs';
+
+const data = JSON.parse(document.getElementById('route-data').textContent);
+const config = JSON.parse(document.getElementById('basemap-config').textContent);
+const plan = data.fuel_plan;
+const coordinates = data.route.geometry.coordinates;
+document.getElementById('summary').textContent = `${data.route.distance_miles.toFixed(2)} miles · ${plan.stops.length} purchases · $${plan.total_cost_usd.toFixed(2)} additional fuel`;
+
+// This provider supplies vector styles, not Leaflet raster PNG tiles.
+const map = new maplibregl.Map({container: 'map', style: config.style_url, center: coordinates[0], zoom: 4,
+    attributionControl: {compact: false}});
+map.addControl(new maplibregl.NavigationControl(), 'top-left');
+const bounds = new maplibregl.LngLatBounds(coordinates[0], coordinates[0]);
+coordinates.forEach(point => bounds.extend(point));
+map.fitBounds(bounds, {padding: 40, duration: 0, maxZoom: 15});
+
+function addRoute() {
+    if (!map.getSource('fuel-route')) {
+        map.addSource('fuel-route', {type: 'geojson', data: {type: 'Feature', properties: {}, geometry: data.route.geometry}});
+        map.addLayer({id: 'fuel-route', type: 'line', source: 'fuel-route',
+            layout: {'line-join': 'round', 'line-cap': 'round'}, paint: {'line-color': '#147e9c', 'line-width': 5}});
+    }
+}
+map.on('style.load', addRoute);
+let fallbackUsed = false;
+map.on('error', () => {
+    document.getElementById('map-status').hidden = false;
+    // A failed style must not erase the road geometry. No alternate blocked
+    // tile endpoint, header spoofing, cache bypass, or retry loop is used.
+    if (!fallbackUsed && !map.getSource('fuel-route')) {
+        fallbackUsed = true;
+        map.setStyle({version: 8, sources: {}, layers: [{id: 'background', type: 'background', paint: {'background-color': '#e6edf0'}}]});
+    }
+});
+map.once('idle', () => document.getElementById('map').setAttribute('aria-busy', 'false'));
+
+for (const [label, point] of [['Start', coordinates[0]], ['Finish', coordinates[coordinates.length - 1]]]) {
+    new maplibregl.Marker({color: '#147e9c'}).setLngLat(point)
+        .setPopup(new maplibregl.Popup().setText(label)).addTo(map);
+}
+plan.stops.forEach((stop, index) => {
+    const text = `${stop.name} — ${stop.city}, ${stop.state}: ${stop.gallons.toFixed(3)} gal × $${stop.price_per_gallon_usd.toFixed(5)} = $${stop.cost_usd.toFixed(2)} at mile ${stop.mile_marker}`;
+    const item = document.createElement('li');
+    item.textContent = text;
+    document.getElementById('stops').appendChild(item);
+    new maplibregl.Marker({color: '#147e9c'}).setLngLat([stop.longitude, stop.latitude])
+        .setPopup(new maplibregl.Popup().setText(`${index + 1}. ${text}`)).addTo(map);
+});
+</script>
+</body>
+</html>

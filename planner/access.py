@@ -4,7 +4,7 @@ Fuel is reoptimized on the actual road route through the selected waypoints.
 This includes ramps/service roads; it does not claim optimal alternative road paths.
 """
 from .optimization import optimize_fuel_stops
-from .services import get_route, ProviderFailure
+from .services import get_route, ProviderFailure, NoDrivingRoute
 
 
 def verify_access_plan(start, end, candidates, initial_plan, vehicle):
@@ -14,7 +14,23 @@ def verify_access_plan(start, end, candidates, initial_plan, vehicle):
     if len(selected) > 98:
         raise ProviderFailure('Station access route exceeds provider waypoint budget')
     via = [(s['latitude'], s['longitude']) for s in selected]
-    route, hit = get_route(start, end, via=via)
+    try:
+        route, hit = get_route(start, end, via=via)
+    except NoDrivingRoute as error:
+        points = [dict(role='start', latitude=start[0], longitude=start[1], snap_radius_meters=None)]
+        points.extend(dict(role='fuel_stop', opis_id=s['opis_id'], name=s.get('name'),
+                           latitude=s['latitude'], longitude=s['longitude'], snap_radius_meters=75)
+                      for s in selected)
+        points.append(dict(role='finish', latitude=end[0], longitude=end[1], snap_radius_meters=None))
+        index = error.waypoint_index
+        error.diagnostics = {
+            'provider': 'OSRM', 'provider_code': error.provider_code,
+            'failed_waypoint_index': index,
+            'failed_waypoint': points[index] if index is not None and 0 <= index < len(points) else None,
+            'waypoints': points,
+            'endpoint_snap_policy': 'OSRM default (unlimited); fuel stops limited to 75 meters',
+        }
+        raise
     legs = route.get('leg_distances_miles', [])
     if len(legs) != len(selected) + 1:
         raise ProviderFailure('Missing road distances for station access')

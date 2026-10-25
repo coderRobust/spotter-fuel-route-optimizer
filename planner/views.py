@@ -78,7 +78,7 @@ class OptimizeView(APIView):
     routing_requests+=int(not access_hit)
     hit=hit and access_hit
     road_access_verified=True
-   except NoDrivingRoute as err:return Response({'error':'station_access_unavailable','detail':str(err)},status=422)
+   except NoDrivingRoute as err:return Response({'error':'station_access_unavailable','detail':str(err),'diagnostics':err.diagnostics},status=422)
    except UnreachableRoute as err:return Response({'error':'no_feasible_access_fuel_plan','detail':str(err)},status=422)
    except ProviderFailure as err:return Response({'error':'provider_failure','detail':str(err)},status=502)
   from .maps import cache_map
@@ -87,7 +87,7 @@ class OptimizeView(APIView):
    'routing_cache_hit':hit,'routing_requests':routing_requests,'road_access_verified':road_access_verified,'candidate_stations':len(candidates),'station_coordinate_precision':'verified only' if not args['allow_approximate_stations'] else 'mixed; see candidate_precision_counts','candidate_precision_counts':{p:sum(1 for s in candidates if s.get('precision')==p) for p in sorted({s.get('precision','unknown') for s in candidates})},
    'approximate_stations_allowed':args['allow_approximate_stations'],
    'station_distance_basis':'actual road-route leg distances' if road_access_verified else ('routing segment annotations' if route.get('segment_miles') else 'globally scaled geometry approximation'),
-   'route_access':'Road-routed via selected stations; detour consumption included; road snap within 75 meters' if road_access_verified else 'Projected proximity only; station detours are not verified',
+   'route_access':'Road-routed via selected stations; detour consumption included; fuel-stop road snaps within 75 meters; endpoints use OSRM default snapping' if road_access_verified else 'Projected proximity only; station detours are not verified',
    'price_source':'data/fuel-prices-for-be-assessment.csv; minimum recorded price per OPIS/city/state; historical, no freshness guarantee',
    'coordinate_attribution':'OpenStreetMap contributors, ODbL 1.0 (bundled reviewed dataset); see stop provider fields',
    'cost_basis':'additional purchases only; existing starting fuel excluded',
